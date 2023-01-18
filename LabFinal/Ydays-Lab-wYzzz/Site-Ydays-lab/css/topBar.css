@@ -1,0 +1,86 @@
+.top-bar {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    background-color: #F68757;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 3px 0px;
+}
+
+button {
+    background: transparent;
+    border: transparent;
+    cursor: pointer;
+}
+
+.icon-home {
+    height: 25px;
+    width: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
+    color: black;
+}
+a {
+    cursor: pointer;
+}
+
+.title {
+    padding-top: 20px;
+}
+
+.icon-parametre {
+    height: 30px;
+    width: 30px;
+    padding-right: 20px;
+    padding-top: 20px;
+    color: black;
+}
+
+.parametre {
+    position: absolute;
+    left: 85%;
+    top: 180px;
+    transform: translate(-50%, -50%);
+    height: 215px;
+    width: 215px;
+    z-index: 5;
+    background-color: #F68757;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.parametre-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 15%;
+}
+
+.icon {
+    padding: 10px 0;
+}
+
+.links {
+    text-decoration: none;
+    color: black;
+}
+
+.links:hover {
+    text-decoration: underline;
+}
+
+.params  {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.deconnexion {
+    border-radius: 20px;
+    font-size: small;
+    width: 80%;
+    cursor: pointer;
+    margin-top: 20px;
+    padding: 5px;
+    background-color: rgb(150, 148, 148);
+}

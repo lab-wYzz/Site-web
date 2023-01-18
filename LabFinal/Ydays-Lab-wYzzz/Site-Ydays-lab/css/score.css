@@ -1,0 +1,57 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Zen Dots', cursive;
+    background-color: #DFDFDF;
+}
+
+body {
+    overflow: hidden;
+}
+
+.title_classement {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1em;
+    background-color: #F68757;
+    padding: 15px;
+    width: 280px;
+    text-align: center;
+    border-radius: 15px 50px;
+}
+
+table,
+td {
+    border: 1px solid #F68757;
+    width: 50%;
+}
+
+table {
+    position: absolute;
+    top: 500px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #dfdfdfa4;
+}
+
+td {
+    padding: 10px 0;
+    text-align: center;
+    width: 150px;
+}
+
+thead {
+    background-color: #F68757;
+}
+
+th {
+    padding: 10px 15px;
+}

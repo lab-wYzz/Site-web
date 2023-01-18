@@ -1,0 +1,10 @@
+.back {
+    background: no-repeat url(../assets/background.png);
+    position: absolute;
+    top: 54%;
+    left: -80px;
+    height: 380px;
+    width: 380px;
+    opacity: 0.2;
+    z-index: -5;
+}

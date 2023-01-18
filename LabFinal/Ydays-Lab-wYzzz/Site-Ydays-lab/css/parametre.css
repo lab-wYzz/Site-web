@@ -1,0 +1,46 @@
+.parametre {
+    position: absolute;
+    left: 50%;
+    top: 180px;
+    transform: translate(-50%, -50%);
+    border-radius: 1500px;
+    height: 215px;
+    width: 215px;
+    z-index: 5;
+    background-color: #F68757;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.parametre-container {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 20%;
+}
+
+.icon {
+    padding: 10px 0;
+}
+
+.links {
+    text-decoration: none;
+    color: #393D3F;
+}
+
+.links:hover {
+    text-decoration: underline;
+}
+
+.params  {
+    opacity: 1;
+    transition: 0.5s ease;
+}
+
+.deconnexion {
+    border-radius: 20px;
+    font-size: small;
+    width: 80%;
+    cursor: pointer;
+}
