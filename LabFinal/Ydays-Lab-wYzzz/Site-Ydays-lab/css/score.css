@@ -21,11 +21,27 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 1em;
-    background-color: #F68757;
     padding: 15px;
-    width: 280px;
+    width: 580px;
     text-align: center;
     border-radius: 15px 50px;
+}
+
+.scroll-bg {
+    background: white;
+    margin: 20%;
+}
+
+.scroll-div {
+    width: 780px;
+    height: 500px;
+    overflow-y: scroll;
+    border-radius: 0%;
+}
+
+.scroll-object {
+    width: 100%;
+    border-radius: 0vw;
 }
 
 table,
@@ -34,22 +50,15 @@ td {
     width: 50%;
 }
 
-table {
-    position: absolute;
-    top: 500px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #dfdfdfa4;
-}
-
 td {
-    padding: 10px 0;
+    padding: 20px 0;
     text-align: center;
     width: 150px;
 }
 
 thead {
     background-color: #F68757;
+    width: 758px;
 }
 
 th {

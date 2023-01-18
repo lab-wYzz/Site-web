@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,12 @@
     <link rel="stylesheet" href="../css/signup.css">
     <title>Signup</title>
 </head>
+
 <body>
     <div class="box">
         <div class="form">
             <h2>Sign Up</h2>
-            <form action="../../formGET.php" method="get">
+            <form action="../../../formGET.php" method="get">
                 <div class="inputBox">
                     <input type="email" name="email" required="required">
                     <span>Email</span>
@@ -22,7 +24,7 @@
                     <span>Password</span>
                     <i></i>
                 </div>
-                    <input type="submit" value="Valider" />
+                <input type="submit" value="Valider" />
             </form>
             <div class="links">
                 <a href="./login.php">Sign In</a>
@@ -30,4 +32,5 @@
         </div>
     </div>
 </body>
+
 </html>
