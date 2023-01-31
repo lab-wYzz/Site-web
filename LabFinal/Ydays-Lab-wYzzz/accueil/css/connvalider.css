@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
+*,
+::after,
+::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-family: 'Zen Dots', cursive;
+    background-color: #DFDFDF;
 }
 
 body {
@@ -33,8 +39,8 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,
-    #F68757, #F68757);
+    background: linear-gradient(0deg, transparent,
+            #F68757, #F68757);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -46,20 +52,19 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,
-    #F68757, #F68757);
+    background: linear-gradient(0deg, transparent,
+            #F68757, #F68757);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
 
 @keyframes animate {
-    0%
-    {
+    0% {
         transform: rotate(0deg);
     }
-    100%
-    {
+
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -87,8 +92,7 @@ body {
     justify-content: center;
 }
 
-input[type="submit"]
-{
+input[type="submit"] {
     border: none;
     outline: none;
     background: #F68757;
@@ -99,7 +103,7 @@ input[type="submit"]
     font-weight: 600;
     cursor: pointer;
 }
-input[type="submit"]:active
-{
+
+input[type="submit"]:active {
     opacity: 0.8;
 }

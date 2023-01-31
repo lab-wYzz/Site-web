@@ -42,7 +42,9 @@
     </section>
     <section>
         <div class="div_button">
-            <button class="button">Filières</button>
+            <button class="button">
+                <a class="links" href="../pages/question.php">Filières</a>
+            </button>
             <button class="button">Culture G</button>
             <button class="button">Jeux</button>
         </div>

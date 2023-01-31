@@ -1,10 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
+*,
+::after,
+::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-family: 'Zen Dots', cursive;
+    background-color: #DFDFDF;
 }
 
 body {
@@ -33,8 +39,8 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,
-    #F68757, #F68757);
+    background: linear-gradient(0deg, transparent,
+            #F68757, #F68757);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
 }
@@ -46,20 +52,19 @@ body {
     left: -50%;
     width: 380px;
     height: 420px;
-    background: linear-gradient(0deg,transparent,
-    #F68757, #F68757);
+    background: linear-gradient(0deg, transparent,
+            #F68757, #F68757);
     transform-origin: bottom right;
     animation: animate 6s linear infinite;
     animation-delay: -3s;
 }
 
 @keyframes animate {
-    0%
-    {
+    0% {
         transform: rotate(0deg);
     }
-    100%
-    {
+
+    100% {
         transform: rotate(360deg);
     }
 }
@@ -112,8 +117,8 @@ body {
     transition: 0.5s;
 }
 
-.inputBox input:valid ~ span,
-.inputBox input:focus ~ span {
+.inputBox input:valid~span,
+.inputBox input:focus~span {
     color: #F68757;
     transform: translateX(0px) translateY(-34px);
     font-size: 0.75em;
@@ -132,27 +137,20 @@ body {
     z-index: 9;
 }
 
-.inputBox input:valid ~ i,
-.inputBox input:focus ~ i {
+.inputBox input:valid~i,
+.inputBox input:focus~i {
     height: 44px;
 }
 
 .links {
     display: flex;
-    justify-content: space-between;
+    justify-content: right;
 }
 
-.links .su {
+.links a {
     margin: 10px 0;
     font-size: 0.75em;
     color: #F68757;
-    text-decoration: none;
-}
-
-.links .fp {
-    margin: 10px 0;
-    font-size: 0.75em;
-    color: #8f8f8f;
     text-decoration: none;
 }
 
@@ -160,8 +158,7 @@ body {
     color: #8f8f8f;
 }
 
-input[type="submit"]
-{
+input[type="submit"] {
     border: none;
     outline: none;
     background: #F68757;
@@ -172,58 +169,7 @@ input[type="submit"]
     font-weight: 600;
     cursor: pointer;
 }
-input[type="submit"]:active
-{
+
+input[type="submit"]:active {
     opacity: 0.8;
-}
-
-.switch {
-	display: inline-block;
-	position: absolute;
-    left: 300px;
-    top: 15px;
-	width: 65px;
-	height: 35px;
-	cursor: pointer;
-	overflow: hidden;
-}
-
-.switch input {
-	position: absolute;
-	top: -30px;
-	left: -30px;
-	width: 0;
-	height: 0;
-}
-
-.switch input + span {
-  position: absolute;
- top: 0;
- bottom: 0;
- left: 0;
- right: 0;
- background: rgb(58, 58, 58);
- border-radius: 20px;
-}
-
-.switch input:checked + span {
-	background: grey;
-}
-
-.switch input + span:before {
-	content: "";
-	display: inline-block;
-	position: absolute;
-	top: 50%;
-	left: 4px;
-	width: 27px;
-	height: 27px;
-	background: white;
-	border-radius: 50%;
-	transform: translateY(-50%);
-	transition: all .5s;
-}
-
-.switch input:checked + span:before {
-	left: 34px;
 }
