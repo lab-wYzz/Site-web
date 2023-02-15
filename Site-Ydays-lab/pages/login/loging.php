@@ -33,7 +33,7 @@ if ($type === "Connexion") {
             $_SESSION['pass_user'] = $row["pass_user"];
             $_SESSION['xp'] = $row["xp"];
             $_SESSION['message'] = "Connected";
-            header('Location: ../pages/accueil.php');
+            header('Location: ../accueil/accueil.php');
         }
     }
     if ($show_users == "") {

@@ -28,13 +28,13 @@ try {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/score.css">
+    <link rel="stylesheet" href="../../css/score.css">
     <title>LeaderBoard Using PHP</title>
 </head>
 
 <body>
     <header>
-        <?php require '../compenents/topBar.php' ?>
+        <?php require '../../compenents/topBar.php' ?>
     </header>
 
     <h2 class="title_classement">Classement General</h2>
@@ -70,9 +70,9 @@ try {
                 </table>
             </div>
         </div>
-        <?php require '../compenents/background.php' ?>
+        <?php require '../../compenents/background.php' ?>
     </main>
-    <script src="../JS/score.js"></script>
+    <script src="../../JS/score.js"></script>
 </body>
 
 </html>
