@@ -43,33 +43,19 @@ main {
     height: 300px;
 }
 
-/* .scroll-div {
-    width: 100%;
-    height: 100%;
-    max-height: 300px;
-    border-radius: 0%;
-} */
-
 .scroll-object {
     width: 100%;
     border-radius: 0vw;
 }
 
-table,
-td {
+table{
     border: 1px solid #F68757;
-    width: 50%;
 }
 
 td {
     padding: 20px 0;
     text-align: center;
     width: 150px;
-}
-
-thead {
-
-    width: auto;
 }
 
 th {
@@ -79,7 +65,6 @@ th {
 .scroll-object th,
 .scroll-object td {
     width: 150px;
-    text-align: center;
     border: 1px solid #E0E0E0;
 }
 
@@ -108,7 +93,7 @@ th {
 
 /* Track */
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: #f5f5f5;
 }
 
 /* Handle */
