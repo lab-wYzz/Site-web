@@ -83,7 +83,7 @@ if (isset($_SESSION['message'])) {
     </main>
 
 
-    <script src="login.js"></script>
+    <script src="../../JS/login.js"></script>
 </body>
 
 </html>
