@@ -29,7 +29,7 @@
                 <ion-icon name="person-outline"></ion-icon>
                 <a class="links" href="#">Compte</a>
             </div>
-            <button class="deconnexion">Deconnexion</button>
+            <a href="../login_page/logout.php"><button class="deconnexion">Deconnexion</button></a>
         </div>
     </div>
 
