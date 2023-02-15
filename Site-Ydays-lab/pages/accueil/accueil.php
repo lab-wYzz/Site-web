@@ -1,17 +1,16 @@
-
 <?php
 session_start();
 
 // empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
-if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {   
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {
     header('Location: ../login/logout.php');
     exit();
 }
 
 $xp = $_SESSION['xp'];
+$progbar = round((($xp * 100) / 10000), 0)
 
-
-?>
+    ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -42,9 +41,11 @@ $xp = $_SESSION['xp'];
     </header>
     <section>
         <div class="level">
-            <h4 class="level_h4">Tu es rang</h4>
+            <h4 class="level_h4">Tu es rang
+                <?= $progbar ?>
+            </h4>
             <div class="progression">
-                <div class="progress-circle" data-value="90">
+                <div class="progress-circle" data-value="<?= $progbar ?>">
                     <div class="progress-masque">
                         <div class="progress-barre"></div>
                         <div class="progress-sup50"></div>
@@ -52,7 +53,9 @@ $xp = $_SESSION['xp'];
                     </div>
                 </div>
             </div>
-            <h5 class="xp"><?= $xp ?> XP</h5>
+            <h5 class="xp">
+                <?= $xp ?> XP
+            </h5>
         </div>
     </section>
     <section>
