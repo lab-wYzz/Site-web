@@ -33,7 +33,9 @@ try {
 </head>
 
 <body>
-    <header><?php require '../compenents/topBar.php' ?></header>
+    <header>
+        <?php require '../compenents/topBar.php' ?>
+    </header>
 
     <h2 class="title_classement">Classement General</h2>
     <main>
@@ -41,13 +43,13 @@ try {
             <div class="scroll-div" id="tableScroll">
                 <table class="scroll-object">
                     <thead>
-                        <td>Rang</td>
-                        <td>Pseudo</td>
-                        <td>Xp</td>
-                        <td>Filière</td>
-                        <thead>
-                        <tbody>
-                            <?php foreach ($result as $row) : ?>
+                        <th>Rang</th>
+                        <th>Pseudo</th>
+                        <th>Xp</th>
+                        <th>Filière</th>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($result as $row): ?>
                             <tr>
                                 <td>
                                     <?php echo "$ranking" ?>
@@ -63,10 +65,8 @@ try {
                                 </td>
                             </tr>
                             <?php $ranking++; ?>
-                            <?php endforeach; ?>
-                        </tbody>
-                    </thead>
-                    </thead>
+                        <?php endforeach; ?>
+                    </tbody>
                 </table>
             </div>
         </div>

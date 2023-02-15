@@ -13,9 +13,12 @@
 </head>
 
 <body>
-    <header><?php require '../compenents/topBar.php' ?></header>
+    <header>
+        <?php require '../compenents/topBar.php' ?>
+    </header>
 
-    <main><?php require '../compenents/progression.php' ?>
+    <main>
+        <?php require '../compenents/progression.php' ?>
 
         <div class="quiz">
             <h3 class="question">Combien de filiere existe-t-il a Ynov ?</h3>
