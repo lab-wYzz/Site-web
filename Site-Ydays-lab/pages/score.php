@@ -1,26 +1,26 @@
-<?php
+<!-- <?php
 
-$user = "root";
-$pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=ywzz', $user, $pass);
+        $user = "root";
+        $pass = "";
+        $bdd = new PDO('mysql:host=localhost;dbname=ywzz', $user, $pass);
 
-try {
+        try {
 
-    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user ");
+            $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user ");
 
-    $stmt->execute();
-    $result = $stmt->fetchAll();
+            $stmt->execute();
+            $result = $stmt->fetchAll();
 
-    usort($result, function ($a, $b) {
-        $a = $a['xp'];
-        $b = $b['xp'];
-        return ($a == $b) ? 0 : (($a < $b) ? 1 : -1);
-    });
-    $ranking = 1;
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
-?>
+            usort($result, function ($a, $b) {
+                $a = $a['xp'];
+                $b = $b['xp'];
+                return ($a == $b) ? 0 : (($a < $b) ? 1 : -1);
+            });
+            $ranking = 1;
+        } catch (Exception $e) {
+            die('Erreur : ' . $e->getMessage());
+        }
+        ?> -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -49,7 +49,7 @@ try {
                         <th>Filière</th>
                     </thead>
                     <tbody>
-                        <?php foreach ($result as $row): ?>
+                        <?php foreach ($result as $row) : ?>
                             <tr>
                                 <td>
                                     <?php echo "$ranking" ?>

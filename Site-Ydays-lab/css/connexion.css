@@ -1,0 +1,165 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #2C2D30;
+    font-family: 'Mina', sans-serif;
+    color: #2C2D30;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+h2 {
+    color: #4E9BC6;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 500px;
+    border: 1px solid #2C2D30;
+    padding: 40px;
+    background-color: #E2E9ED;
+    border-radius: 20px;
+}
+
+.form {
+    position: absolute;
+}
+
+p.input-container {
+    width: 100%;
+    position: relative;
+    top: 50px;
+    margin-bottom: 25px;
+}
+
+label {
+    color: #2C2D30;
+    position: absolute;
+    cursor: text;
+    transform: translateY(-25px);
+    transition: transform 0.3s ease;
+    left: 0;
+    bottom: -15px;
+}
+
+input {
+    width: 250px;
+    height: 40px;
+    font-size: 16px;
+    transition: 0.6s;
+    border: none;
+    border-bottom: 2px solid #2C2D30;
+    background-color: transparent;
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #4E9BC6;
+}
+
+.input-container {
+    margin-top: 20px;
+}
+
+.animation label {
+    transform: translateY(-55px);
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.inscription {
+    margin-top: 50px;
+}
+
+.btn {
+    width: 200px;
+    background: #4E9BC6;
+    border-radius: 10px;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+.animation-color label {
+    color: #4E9BC6;
+}
+
+.logo {
+    margin-left: 15%;
+    margin-top: 50px;
+    height: 150px;
+    width: 150px;
+}
+
+.btnInfo {
+    display: flex;
+    justify-content: end;
+    cursor: pointer;
+}
+
+.btnClose {
+    cursor: pointer;
+}
+
+.info {
+    opacity: 0;
+    transform: translateX(1500px);
+}
+
+.presentation {
+    position: absolute;
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+    background-color: #E2E9ED;
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@media screen and (min-width:800px) {
+    .main {
+        margin-top: 200px;
+    }
+
+    .container {
+        width: 800px;
+        flex-direction: row;
+    }
+
+    .info {
+        transform: translateX(0);
+        opacity: 1;
+        margin-top: 100px;
+        margin-left: 50px;
+    }
+
+    .presentation {
+        position: relative;
+    }
+
+    .btnInfo {
+        opacity: 0;
+    }
+
+    .btnClose {
+        opacity: 0;
+    }
+
+    .form {
+        position: relative;
+    }
+}
