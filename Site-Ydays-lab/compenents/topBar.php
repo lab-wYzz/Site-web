@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="../css/topBar.css">
+    <link rel="stylesheet" href="../../css/topBar.css">
     <title>wYzz</title>
 </head>
 
@@ -18,7 +18,7 @@
     <header>
         <div class="top-bar">
             <div class="home">
-                <a href="../pages/accueil.php">
+                <a href="../../pages/accueil/accueil.php">
                     <ion-icon class="icon-home" name="home-outline"></ion-icon>
                 </a>
 
@@ -35,26 +35,26 @@
                     <div class="parametre-container">
                         <div class="icon">
                             <ion-icon name="podium-outline"></ion-icon>
-                            <a class="links" href="../pages/score.php">Classement</a>
+                            <a class="links" href="../../pages/score/score.php">Classement</a>
                         </div>
 
                         <div class="icon">
                             <ion-icon name="pie-chart-outline"></ion-icon>
-                            <a class="links" href="../pages/question.php">Statistique</a>
+                            <a class="links" href="../../pages/question/question.php">Statistique</a>
                         </div>
 
                         <div class="icon">
                             <ion-icon name="person-outline"></ion-icon>
                             <a class="links" href="#">Compte</a>
                         </div>
-                        <button class="deconnexion">Deconnexion</button>
+                        <a href="../../pages/login/logout.php"><button class="deconnexion">Deconnexion</button></a>
                     </div>
                 </div>
             </div>
         </div>
     </header>
 
-    <script src="../JS/settings.js"></script>
+    <script src="../../JS/settings.js"></script>
 </body>
 
 </html>

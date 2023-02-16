@@ -8,17 +8,17 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/question.css">
+    <link rel="stylesheet" href="../../css/question.css">
     <title>Question {var de la progression} - Arriveras-tu a repondre ?</title>
 </head>
 
 <body>
     <header>
-        <?php require '../compenents/topBar.php' ?>
+        <?php require '../../compenents/topBar.php' ?>
     </header>
 
     <main>
-        <?php require '../compenents/progression.php' ?>
+        <?php require '../../compenents/progression.php' ?>
 
         <div class="quiz">
             <h3 class="question">Combien de filiere existe-t-il a Ynov ?</h3>
@@ -32,7 +32,7 @@
             <p class="p-valider">Etes-vous sur de votre reponse !!</p>
         </div>
 
-        <?php require '../compenents/background.php' ?>
+        <?php require '../../compenents/background.php' ?>
     </main>
 
 
