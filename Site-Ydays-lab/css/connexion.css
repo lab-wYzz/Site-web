@@ -105,9 +105,15 @@ input:focus {
     width: 150px;
 }
 
-.btnInfo {
+.validation {
     display: flex;
-    justify-content: end;
+    justify-content: center;
+}
+
+.btnInfo {
+    height: 24px;
+    margin-top: 58px;
+    margin-left: 10px;
     cursor: pointer;
 }
 
@@ -128,6 +134,19 @@ input:focus {
     background-color: #E2E9ED;
     transform: translateX(0);
     opacity: 1;
+}
+
+a {
+    color: #4E9BC6;
+    text-decoration: none;
+}
+
+.inscription {
+    font-size: 15px;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 @media screen and (min-width:800px) {

@@ -35,11 +35,13 @@
                     <input type="password" id="input-password" class="login-input">
                     <label for="input-password" unselectable="on">Password</label>
                 </p>
-                <p class="inscription">si vous n'etes pas inscrits <a href="#">Inscrivez vous</a></p>
-                <input type="submit" class="btn" value="Valider">
-                <span class="material-symbols-outlined btnInfo">
-                    pending
-                </span>
+                <p class="inscription">si vous n'etes pas inscrits <br> <a href="#">Inscrivez vous</a></p>
+                <div class="validation">
+                    <input type="submit" class="btn" value="Valider">
+                    <span class="material-symbols-outlined btnInfo">
+                        pending
+                    </span>
+                </div>
             </div>
 
             <div class="info">
