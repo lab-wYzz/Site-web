@@ -79,7 +79,7 @@ table {
     border-collapse: collapse;
     margin: 0 auto;
     margin-top: 80px;
-    width: 300px;
+    max-width: 1000px;
     height: 400px;
     table-layout: fixed;
     color: #2C2D30;

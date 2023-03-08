@@ -67,10 +67,13 @@
 
         <table>
             <thead>
+                <tr>
+                    <th colspan="5">Classement General</th>
+                </tr>
                 <tr class="thead">
                     <th scope="col">Pseudo</th>
                     <th scope="col">XP</th>
-                    <th scope="col">Rang</th>
+                    <th scope="col">top</th>
                 </tr>
             </thead>
             <tbody>
