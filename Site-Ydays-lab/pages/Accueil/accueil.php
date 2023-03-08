@@ -59,7 +59,7 @@
 
         <div class="rank">
             <img class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
-            <span>1250 xp</span>
+            <span></span>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>

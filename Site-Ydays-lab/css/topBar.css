@@ -1,6 +1,7 @@
 .topBar {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 40px 80px;
 }
 
@@ -27,4 +28,10 @@ li {
 
 .link {
     display: flex;
+}
+
+@media screen and (max-width: 500px) {
+    .topBar {
+        margin: 40px 20px;
+    }
 }

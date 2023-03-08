@@ -106,6 +106,29 @@ table th {
     letter-spacing: .1em;
 }
 
+@media screen and (max-width: 1000px) {
+    .mainAccueil {
+        flex-direction: column;
+    }
+
+    .mainAccueil :nth-child(1) {
+        order: 2;
+    }
+
+    .mainAccueil :nth-child(2) {
+        order: 1;
+    }
+
+    .mainAccueil :nth-child(3) {
+        order: 3;
+    }
+
+    .rank {
+        margin-top: 5px;
+    }
+}
+
+
 
 
 @keyframes progress-forward {
