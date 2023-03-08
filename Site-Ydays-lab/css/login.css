@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     font-family: Arial;
@@ -216,4 +216,4 @@ header.active {
 
 .active#to_blur {
     filter: blur(10px);
-}
+} */

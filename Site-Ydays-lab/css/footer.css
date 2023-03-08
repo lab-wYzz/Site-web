@@ -1,0 +1,15 @@
+.separation {
+    position: absolute;
+    width: 90%;
+    border-top: 1px solid #E2E9ED;
+    margin-left: 5%;
+}
+
+.contentFooter {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin-top: 120px;
+}
