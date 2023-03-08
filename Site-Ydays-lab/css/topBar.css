@@ -1,0 +1,30 @@
+.topBar {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px 80px;
+}
+
+h1 {
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: #E2E9ED;
+    transition: 0.3s ease;
+}
+
+a:hover {
+    color: #4E9BC6;
+}
+
+li {
+    font-size: 18px;
+    font-weight: 700;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.link {
+    display: flex;
+}
