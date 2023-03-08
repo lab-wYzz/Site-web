@@ -1,7 +1,13 @@
 <?php
 session_start();
 
-$type = $_GET["type"];
+if (isset($_GET["type"])) {
+    $type = $_GET["type"];
+} else {
+    header('Location: ../login/logout.php');
+    exit();
+}
+
 
 // recupère les informations spécifiques à l'inscription
 if ($type == "Inscription") {
@@ -23,7 +29,7 @@ $result = $dbh->query($requete);
 // vérification en cas de connexion
 if ($type === "Connexion") {
     foreach ($result as $row) {
-        if ($user == $row["email"]& $pass == $row["pass_user"]) {
+        if ($user == $row["email"] && password_verify($pass, $row["pass_user"])) {
             // définit les variables de la session de la personne connectée
             $show_users = $show_users . 'id_user : ' . $row["id_user"] . '</br>' . 'email : ' . $row["email"] . '</br>' . 'pseudo : ' . $row["pseudo"] . '</br>' . 'filiere : ' . $row["filiere"] . '</br>' . 'pass_user : ' . $row["pass_user"] . '</br>' . 'xp : ' . $row["xp"];
             $_SESSION['id_user'] = $row["id_user"];
@@ -33,7 +39,7 @@ if ($type === "Connexion") {
             $_SESSION['pass_user'] = $row["pass_user"];
             $_SESSION['xp'] = $row["xp"];
             $_SESSION['message'] = "Connected";
-            header('Location: ../accueil/accueil.php');
+            header('Location: ../Connexion/accueil.php');
         }
     }
     if ($show_users == "") {
@@ -47,19 +53,29 @@ if ($type === "Connexion") {
 // vérification en cas d'inscription
 if ($type === "Inscription") {
     foreach ($result as $row) {
-        if ($user == $row["email"]) {
-            // renvoie l'utilisateur sur la page de connexion si le compte existe déjà
-            $next = false;
-            $show_users = "déjà inscrit";
-            $_SESSION['message'] = $show_users;
-            header('Location: login.php');
-
+        if ($user == $row["email"] || $pseudo == $row["pseudo"]) {
+            if ($pseudo == $row["pseudo"]) {
+                // renvoie l'utilisateur sur la page de connexion si le pseudo est déjà utilisé
+                $next = false;
+                $show_users = "pseudo déjà utilisé";
+                $_SESSION['message'] = $show_users;
+                header('Location: login.php');
+                exit();
+            } else {
+                // renvoie l'utilisateur sur la page de connexion si l'email est déjà utilisé
+                $next = false;
+                $show_users = "email déjà utilisé";
+                $_SESSION['message'] = $show_users;
+                header('Location: login.php');
+                exit();
+            }
         }
     }
     if ($next == true) {
         // cré le compte de l'utilisateur dans la base de données SQL et le renvoie sur l'accueil
         if (str_contains($user, '@') & str_contains($user, '.')) {
-            $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES ('$user','$pseudo','$filiere','$pass')";
+            $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
+            $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES ('$user','$pseudo','$filiere','$hash_pass')";
             $result = $dbh->exec($requete);
             header('Location: loging.php?email=' . $user . '&pass_user=' . $pass . '&type=Connexion');
         } else {
