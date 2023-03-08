@@ -33,6 +33,7 @@ $progbar = round((($xp * 100) / 10000), 0)
     <header>
         <div class="test">
             <h1>wYzz</h1>
+            <a href="../login/logout.php"><button class="deconnexion">Deconnexion</button></a>
             <button class="settings" id="settings">
                 <ion-icon name="settings-outline" class="icon-settings"></ion-icon>
             </button>
