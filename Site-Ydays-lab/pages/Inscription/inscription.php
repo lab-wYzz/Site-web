@@ -1,3 +1,16 @@
+<?php
+session_start();
+
+$message = "";
+
+// definit le contenu du message d'erreur si il existe
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+}
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,15 +38,15 @@
     <main class="main">
         <div class="container">
 
-            <div class="form">
+            <form action="../login/loging.php" class="form">
                 <h2>Inscription</h2>
                 <p class="input-container">
-                    <input type="email" id="input-password" class="login-input">
-                    <label for="input-password" unselectable="on">Email</label>
+                    <input name="email" type="email" id="input-email" class="login-input">
+                    <label for="input-email" unselectable="on">Email</label>
                 </p>
 
-                <div class="items" id="filiere">
-                    <label class="items">Filiere : </label>
+                <div class="input-container" id="filiere">
+                    <label for="selectfil" unselectable="on">Filière</label>
                     <select id="selectfil" class="items" name="filiere">
                         <option value="informatique">Informatique</option>
                         <option value="audiovisuel">Audio Visuel</option>
@@ -44,28 +57,31 @@
                     </select>
                 </div>
                 <p class="input-container">
-                    <input type="text" id="input-username" class="login-input">
-                    <label for="input-username" unselectable="on">Username</label>
+                    <input name="pseudo" type="text" id="input-pseudo" class="login-input">
+                    <label for="input-pseudo" unselectable="on">Username</label>
                 </p>
                 <p class="input-container">
-                    <input type="password" id="input-password" class="login-input">
-                    <label for="input-password" unselectable="on">Password</label>
+                    <input name="pass_user" type="password" id="input-pass" class="login-input" required>
+                    <label for="input-pass" unselectable="on">Password</label>
                 </p>
                 <p class="input-container">
-                    <input type="password" id="input-password" class="login-input">
-                    <label for="input-password" unselectable="on">Confirmer votre Password</label>
+                    <input name="pass_user_conf" type="password" id="input-pass_conf" class="login-input" required>
+                    <label for="input-pass_conf" unselectable="on">Confirmer votre Password</label>
                 </p>
                 <p class="inscription">Deja inscrits ? <a href="../../pages/Connexion/connexion.php">Connectez-vous</a>
                 </p>
                 <div class="validation">
-                    <input type="submit" class="btn" value="Valider">
+                    <input type="submit" class="btn" name="type" value="Inscription">
                     <span class="material-symbols-outlined btnInfo">
                         pending
                     </span>
                 </div>
-            </div>
+            </form>
 
             <div class="info">
+                <p id="test_message">
+                    <?= $message ?>
+                </p>
                 <p>Bienvenue sur notre quizz dédier aux élèves de Sophia Ynov Campus.
                     Le but de ce quizz est de découvrir les différentes filières qu’il y a au seins de l’école.
                     Identifier vous, avec vos identifiants de l’extranet pour commencer à jouer.</p>

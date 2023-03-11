@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+$message = "";
+
+// definit le contenu du message d'erreur si il existe
+if (isset($_SESSION['message'])) {
+    $message = $_SESSION['message'];
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,28 +39,31 @@
     <main class="main">
         <div class="container">
 
-            <div class="form">
+            <form action="../login/loging.php" class="form">
                 <h2>Connexion</h2>
                 <p class="input-container">
-                    <input type="text" id="input-username" class="login-input">
+                    <input name="pseudo" type="text" id="input-username" class="login-input">
                     <label for="input-username" unselectable="on">Username</label>
                 </p>
                 <p class="input-container">
-                    <input type="password" id="input-password" class="login-input">
+                    <input name="pass_user" type="password" id="input-password" class="login-input">
                     <label for="input-password" unselectable="on">Password</label>
                 </p>
                 <p class="inscription">Toujours pas inscrits ? <a
                         href="../../pages/Inscription/inscription.php">Inscrivez-vous</a>
                 </p>
                 <div class="validation">
-                    <input type="submit" class="btn" value="Valider">
+                    <input type="submit" class="btn" name="type" value="Connexion">
                     <span class="material-symbols-outlined btnInfo">
                         pending
                     </span>
                 </div>
-            </div>
+            </form>
 
             <div class="info">
+                <p id="test_message">
+                    <?= $message ?>
+                </p>
                 <p>Bienvenue sur notre quizz dédier aux élèves de Sophia Ynov Campus.
                     Le but de ce quizz est de découvrir les différentes filières qu’il y a au seins de l’école.
                     Identifier vous, avec vos identifiants de l’extranet pour commencer à jouer.</p>

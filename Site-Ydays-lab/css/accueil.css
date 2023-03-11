@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+:root{
+    --xp: 50%;
+}
+
 body {
     background-color: #2C2D30;
     font-family: 'Mina', sans-serif;
@@ -66,19 +70,21 @@ body::-webkit-scrollbar-thumb {
 .progress-fill {
     position: absolute;
     height: 10px;
-    width: 0%;
-    animation: progress-forward 3s infinite;
+    animation: progress-forward 3s;
     background: #4E9BC6;
     border-radius: 15px;
 }
 
+.scroll{
+    height: 100px;
+}
 
 table {
     background-color: #E2E9ED;
     border: 1px solid #2C2D30;
     border-collapse: collapse;
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 50px;
     max-width: 1000px;
     height: 400px;
     table-layout: fixed;
@@ -99,6 +105,10 @@ table td {
     padding: 20px;
     text-align: center;
     border-left: 1px solid #2C2D30;
+}
+
+tbody{
+    height: 30px;
 }
 
 table th {
@@ -131,25 +141,14 @@ table th {
 
 
 
+
 @keyframes progress-forward {
     0% {
         width: 0%;
     }
 
-    25% {
-        width: 50%;
-    }
-
-    50% {
-        width: 75%;
-    }
-
-    75% {
-        width: 85%;
-    }
-
     100% {
-        width: 100%;
+        width: var(--xp);
     }
 }
 

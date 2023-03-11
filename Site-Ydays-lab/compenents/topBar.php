@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>topBar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
 </head>
 
 <body>
@@ -16,7 +17,7 @@
             <ul class="link">
                 <li><a href="#">Profil</a></li>
                 <li><a href="../Classement/classement.php">Classement</a></li>
-
+                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
             </ul>
         </div>
     </header>

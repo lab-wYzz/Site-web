@@ -17,7 +17,7 @@ function destroy()
     $_SESSION['xp'] = "";
     $_SESSION['message'] = "Deconnected";
 
-    header('Location: login.php');
+    header('Location: ../Connexion/connexion.php');
 
 }
 
