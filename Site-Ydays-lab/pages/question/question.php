@@ -19,13 +19,6 @@ foreach ($result as $row) {
     shuffle($reponse);    
 }
 
-
-
-
-
-
-
-
 ?>
 
 

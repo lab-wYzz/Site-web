@@ -48,9 +48,7 @@ try {
 <body>
     <?php require '../../compenents/topBar.php' ?>
 
-    <main class="mainAccueil">
-
-
+    <main class="mainProfil">
         <div class="rank">
             <img class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
             <span id="xp_value">test</span>
@@ -58,35 +56,12 @@ try {
                 <div class="progress-fill" id="level"></div>
             </div>
         </div>
-
-        <table>
-            <thead>
-                <tr>
-                    <th colspan="5">Classement General</th>
-                </tr>
-                <tr class="thead">
-                    <th scope="col">Pseudo</th>
-                    <th scope="col">XP</th>
-                    <th scope="col">top</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($result as $row) : ?>
-                    <tr>
-                        <td data-label="pseudo"><?php echo $row['pseudo'] ?></td>
-                        <td data-label="xp"><?php echo $row['xp'] ?></td>
-                        <td data-label="rang"><?php echo "$ranking" ?></td>
-                    </tr>
-                    <?php $ranking++; ?>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
     </main>
 
     <?php require '../../compenents/footer.php' ?>
 
 
-    <script src="../../JS/accueil.js"></script>
+    <script src="../../JS/profil.js"></script>
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
