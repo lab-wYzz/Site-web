@@ -17,7 +17,7 @@
             <ul class="link">
                 <li><a href="#">Profil</a></li>
                 <li><a href="../Classement/classement.php">Classement</a></li>
-                <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
+
             </ul>
         </div>
     </header>
