@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --xp: 50%;
 }
 
@@ -75,7 +75,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 15px;
 }
 
-.scroll{
+.scroll {
     height: 100px;
 }
 
@@ -107,7 +107,7 @@ table td {
     border-left: 1px solid #2C2D30;
 }
 
-tbody{
+tbody {
     height: 30px;
 }
 
