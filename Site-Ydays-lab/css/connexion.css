@@ -44,11 +44,11 @@ label {
     bottom: -15px;
 }
 
-#filiere{
+#filiere {
     border-bottom: 2px solid #2C2D30;
 }
 
-#filiere label{
+#filiere label {
     bottom: 0;
     position: relative;
 }
@@ -85,6 +85,7 @@ input:focus {
     border-radius: 10px;
     margin-top: 15px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 .animation-color label {
@@ -104,8 +105,8 @@ input:focus {
     transition: 0.5s ease;
 }
 
-.validation:hover {
-    transform: scale(1.1) translateY(5px);
+.validation input:hover {
+    transform: scale(1.1);
 }
 
 .btnInfo {
@@ -149,7 +150,7 @@ input:focus {
     margin-top: 20px;
 }
 
-#test_message{
+#test_message {
     color: #000000;
     font-weight: 800;
     margin-top: -20px;
