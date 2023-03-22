@@ -11,12 +11,12 @@
 
 <body>
     <header class="topBar">
-        <h1><a href="../pages/Accueil/accueil.php">Wyzz.</a></h1>
+        <h1><a href="#">Wyzz.</a></h1>
 
         <div>
             <ul class="link">
                 <li><a href="#">Profil</a></li>
-                <li><a href="#">Classement</a></li>
+                <li><a href="../pages/Classement/classement.php">Classement</a></li>
 
             </ul>
         </div>
