@@ -4,11 +4,11 @@ session_start();
 
 $user = "root";
 $pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=ywzz', $user, $pass);
+$bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
 
 try {
 
-    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user ");
+    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user LIMIT 5");
 
     $stmt->execute();
     $result = $stmt->fetchAll();
@@ -53,8 +53,7 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img class="categorie" src="../../assets/CultureGe.png" alt="Culture general">
-                </div>
+                <div class="swiper-slide"><img class="categorie" src="../../assets/CultureGe.png" alt="Culture general"></div>
                 <div class="swiper-slide"><img class="categorie" src="../../assets/miniJeux.png" alt="Mini Jeux"></div>
                 <div class="swiper-slide"><img class="categorie" src="../../assets/filiere.png" alt="Filiere"></div>
             </div>
