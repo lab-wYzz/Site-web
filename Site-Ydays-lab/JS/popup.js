@@ -6,9 +6,9 @@ const overlay = document.querySelector(".overlay");
 
 const closePopup = () => {
     modal.style.opacity = "0";
-    modal.style.transform = "translateX(1200px)";
+    modal.style.transform = "translateX(2000px)";
     overlay.style.opacity = "0";
-    overlay.style.transform = "translateX(1200px)";
+    overlay.style.transform = "translateX(2000px)";
     // localStorage.setItem("popupClosedJustePrix", true);
 };
 
@@ -16,3 +16,4 @@ modalBtn.addEventListener("click", (e) => {
     e.preventDefault();
     closePopup();
 });
+
