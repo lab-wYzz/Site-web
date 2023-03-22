@@ -34,9 +34,13 @@ try {
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -53,7 +57,8 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"> <a href="../Filiere/filiere.php"><img class="categorie" src="../../assets/Filiere.png" alt="Culture general"></a></div>
+                <div class="swiper-slide"> <a href="../Filiere/filiere.php"><img class="categorie"
+                            src="../../assets/Filiere.png" alt="Culture general"></a></div>
                 <div class="swiper-slide"><img class="categorie" src="../../assets/CultureG.png" alt="Mini Jeux"></div>
                 <div class="swiper-slide"><img class="categorie" src="../../assets//MiniJeu.png" alt="Filiere"></div>
             </div>
@@ -85,12 +90,12 @@ try {
             </thead>
             <tbody>
                 <?php foreach ($result as $row) : ?>
-                    <tr>
-                        <td data-label="pseudo"><?php echo $row['pseudo'] ?></td>
-                        <td data-label="xp"><?php echo $row['xp'] ?></td>
-                        <td data-label="rang"><?php echo "$ranking" ?></td>
-                    </tr>
-                    <?php $ranking++; ?>
+                <tr>
+                    <td data-label="pseudo"><?php echo $row['pseudo'] ?></td>
+                    <td data-label="xp"><?php echo $row['xp'] ?></td>
+                    <td data-label="rang"><?php echo "$ranking" ?></td>
+                </tr>
+                <?php $ranking++; ?>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -101,21 +106,21 @@ try {
 
     <script src="../../JS/accueil.js"></script>
     <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
 
-        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+    document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
 
-        if (ratio > 100) {
-            ratio = 100;
-        }
+    if (ratio > 100) {
+        ratio = 100;
+    }
 
-        console.log(ratio);
+    console.log(ratio);
 
-        document.getElementById("level").style.width = ratio + '%'
+    document.getElementById("level").style.width = ratio + '%'
 
-        document.documentElement.style.cssText = '--xp :' + ratio + '%;';
+    document.documentElement.style.cssText = '--xp :' + ratio + '%;';
     </script>
 </body>
 

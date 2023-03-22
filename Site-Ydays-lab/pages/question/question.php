@@ -7,21 +7,18 @@ $quest;
 $reponse = array();
 $R1;
 
+
+
 // accède à la base de données SQL
-$dbh = new PDO('mysql:host=localhost;dbname=Ywzz', "root", "");
+$dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
 $requete = "SELECT * FROM question WHERE filiere = '$filiere' ORDER BY rand() LIMIT 1";
 $result = $dbh->query($requete);
-foreach ($result as $row) {
-    $reponse = array();
+foreach ($result as $row) { 
     $quest = $row["quest"];
     array_push($reponse,$row["R1"],$row["R2"],$row["R3"],$row["R4"]);
     $R1 = $reponse[0];
     shuffle($reponse);    
 }
-
-
-
-
 
 
 
@@ -56,14 +53,16 @@ foreach ($result as $row) {
                 <button class="btn-reponse"><?= $reponse[2] ?></button>
                 <button class="btn-reponse"><?= $reponse[3] ?></button>
             </div>
-            <p><?= $test ?></p>
-            <button class="btn-valider">Valider</button>
-            <p class="p-valider">Etes-vous sur de votre reponse !!</p>
         </div>
 
     </main>
 
 
+    <script src="../../JS/question.js"></script>
+    <script>
+        console.log("<?= $quest, $R1 ?>")
+
+    </script>
 </body>
 
 </html>
