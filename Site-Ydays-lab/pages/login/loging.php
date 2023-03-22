@@ -11,11 +11,11 @@ if (isset($_GET["type"])) {
 
 // recupère les informations spécifiques à l'inscription
 if ($type == "Inscription") {
-    $pseudo = $_GET["pseudo"];
+    $user = $_GET["email"];
     $filiere = $_GET["filiere"];
 }
 
-$user = $_GET["email"];
+$pseudo = $_GET["pseudo"];
 $pass = $_GET["pass_user"];
 
 $show_users = "";
@@ -23,13 +23,13 @@ $next = true;
 
 // accède à la base de données SQL
 $dbh = new PDO('mysql:host=localhost;dbname=Ywzz', "root", "");
-$requete = "SELECT * FROM user WHERE email = '$user'";
+$requete = "SELECT * FROM user WHERE pseudo = '$pseudo'";
 $result = $dbh->query($requete);
 
 // vérification en cas de connexion
 if ($type === "Connexion") {
     foreach ($result as $row) {
-        if ($user == $row["email"] && password_verify($pass, $row["pass_user"])) {
+        if ($pseudo == $row["pseudo"] && password_verify($pass, $row["pass_user"])) {
             // définit les variables de la session de la personne connectée
             $show_users = $show_users . 'id_user : ' . $row["id_user"] . '</br>' . 'email : ' . $row["email"] . '</br>' . 'pseudo : ' . $row["pseudo"] . '</br>' . 'filiere : ' . $row["filiere"] . '</br>' . 'pass_user : ' . $row["pass_user"] . '</br>' . 'xp : ' . $row["xp"];
             $_SESSION['id_user'] = $row["id_user"];
@@ -39,13 +39,13 @@ if ($type === "Connexion") {
             $_SESSION['pass_user'] = $row["pass_user"];
             $_SESSION['xp'] = $row["xp"];
             $_SESSION['message'] = "Connected";
-            header('Location: ../Connexion/accueil.php');
+            header('Location: ../Accueil/accueil.php');
         }
     }
     if ($show_users == "") {
         // renvoie l'utilisateur sur la page de connexion si il ne parvient pas à se connecter 
         $_SESSION['message'] = "Email ou Mot de passe incorrect";
-        header('Location: login.php');
+        header('Location: ../Connexion/connexion.php');
     }
 }
 
@@ -59,14 +59,14 @@ if ($type === "Inscription") {
                 $next = false;
                 $show_users = "pseudo déjà utilisé";
                 $_SESSION['message'] = $show_users;
-                header('Location: login.php');
+                header('Location: ../Inscription/inscription.php');
                 exit();
             } else {
                 // renvoie l'utilisateur sur la page de connexion si l'email est déjà utilisé
                 $next = false;
                 $show_users = "email déjà utilisé";
                 $_SESSION['message'] = $show_users;
-                header('Location: login.php');
+                header('Location: ../Inscription/inscription.php');
                 exit();
             }
         }
@@ -77,11 +77,11 @@ if ($type === "Inscription") {
             $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
             $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES ('$user','$pseudo','$filiere','$hash_pass')";
             $result = $dbh->exec($requete);
-            header('Location: loging.php?email=' . $user . '&pass_user=' . $pass . '&type=Connexion');
+            header('Location: loging.php?pseudo=' . $pseudo . '&pass_user=' . $pass . '&type=Connexion');
         } else {
             $show_users = "format de mail non conforme";
             $_SESSION['message'] = $show_users;
-            header('Location: login.php');
+            header('Location: ../Connexion/connexion.php');
         }
     }
 }

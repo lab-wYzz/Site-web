@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 $user = "root";
 $pass = "";
 $bdd = new PDO('mysql:host=localhost;dbname=ywzz', $user, $pass);
@@ -65,9 +67,9 @@ try {
 
         <div class="rank">
             <img class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
-            <span></span>
+            <span id="xp_value">test</span>
             <div class="progress-bar">
-                <div class="progress-fill"></div>
+                <div class="progress-fill" id="level"></div>
             </div>
         </div>
 
@@ -101,6 +103,21 @@ try {
     <script src="../../JS/accueil.js"></script>
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+
+        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+
+        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+
+        if (ratio > 100) {
+            ratio = 100;
+        }
+
+        console.log(ratio);
+
+        document.getElementById("level").style.width = ratio + '%'
+
+        document.documentElement.style.cssText = '--xp :'+ ratio +'%;';
+
     </script>
 </body>
 

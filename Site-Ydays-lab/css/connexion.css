@@ -31,7 +31,6 @@ h2 {
 p.input-container {
     width: 100%;
     position: relative;
-    top: 50px;
     margin-bottom: 25px;
 }
 
@@ -43,6 +42,15 @@ label {
     transition: transform 0.3s ease;
     left: 0;
     bottom: -15px;
+}
+
+#filiere{
+    border-bottom: 2px solid #2C2D30;
+}
+
+#filiere label{
+    bottom: 0;
+    position: relative;
 }
 
 input {
@@ -75,7 +83,7 @@ input:focus {
     width: 200px;
     background: #4E9BC6;
     border-radius: 10px;
-    margin-top: 50px;
+    margin-top: 15px;
     cursor: pointer;
 }
 
@@ -138,7 +146,14 @@ input:focus {
 
 .inscription {
     color: #2C2D30;
-    margin-top: 60px;
+    margin-top: 20px;
+}
+
+#test_message{
+    color: #000000;
+    font-weight: 800;
+    margin-top: -20px;
+    margin-bottom: 20px;
 }
 
 
@@ -156,7 +171,7 @@ input:focus {
     .info {
         transform: translateX(0);
         opacity: 1;
-        margin-top: 100px;
+        margin-top: 70px;
         margin-left: 50px;
     }
 
