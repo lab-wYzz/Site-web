@@ -22,7 +22,7 @@ $show_users = "";
 $next = true;
 
 // accède à la base de données SQL
-$dbh = new PDO('mysql:host=localhost;dbname=Ywzz', "root", "");
+$dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
 $requete = "SELECT * FROM user WHERE pseudo = '$pseudo'";
 $result = $dbh->query($requete);
 

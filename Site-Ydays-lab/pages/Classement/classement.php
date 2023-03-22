@@ -2,7 +2,7 @@
 
 $user = "root";
 $pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=ywzz', $user, $pass);
+$bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
 
 try {
 
