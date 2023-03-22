@@ -53,9 +53,9 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img class="categorie" src="../../assets/CultureGe.png" alt="Culture general"></div>
-                <div class="swiper-slide"><img class="categorie" src="../../assets/miniJeux.png" alt="Mini Jeux"></div>
-                <div class="swiper-slide"><img class="categorie" src="../../assets/filiere.png" alt="Filiere"></div>
+                <div class="swiper-slide"> <a href="../Filiere/filiere.php"><img class="categorie" src="../../assets/Filiere.png" alt="Culture general"></a></div>
+                <div class="swiper-slide"><img class="categorie" src="../../assets/CultureG.png" alt="Mini Jeux"></div>
+                <div class="swiper-slide"><img class="categorie" src="../../assets//MiniJeu.png" alt="Filiere"></div>
             </div>
 
             <!-- If we need navigation buttons -->
@@ -115,8 +115,7 @@ try {
 
         document.getElementById("level").style.width = ratio + '%'
 
-        document.documentElement.style.cssText = '--xp :'+ ratio +'%;';
-
+        document.documentElement.style.cssText = '--xp :' + ratio + '%;';
     </script>
 </body>
 
