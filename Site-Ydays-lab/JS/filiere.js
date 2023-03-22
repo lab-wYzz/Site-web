@@ -1,5 +1,3 @@
-
-
 //Fenetre modal
 const modalBtn = document.getElementById("modal-btn");
 const modal = document.getElementById("modal");
