@@ -2,26 +2,6 @@
 
 session_start();
 
-$user = "root";
-$pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
-
-try {
-
-    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user LIMIT 5");
-
-    $stmt->execute();
-    $result = $stmt->fetchAll();
-
-    usort($result, function ($a, $b) {
-        $a = $a['xp'];
-        $b = $b['xp'];
-        return ($a == $b) ? 0 : (($a < $b) ? 1 : -1);
-    });
-    $ranking = 1;
-} catch (Exception $e) {
-    die('Erreur : ' . $e->getMessage());
-}
 ?>
 
 <!DOCTYPE html>
@@ -34,9 +14,13 @@ try {
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -49,39 +33,45 @@ try {
     <?php require '../../compenents/topBar.php' ?>
 
     <main class="mainProfil">
-        <div class="rank">
-            <img class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
+        <div class="rankProfil">
+            <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
             <span id="xp_value">test</span>
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
             </div>
         </div>
 
-        <table>
-        <thead>
-            <tr>
-                <th colspan="5">Classement General</th>
-            </tr>
-            <tr class="thead">
-                <th scope="stat">Pseudo</th>
-                <th scope="stat">Filiere</th>
-                <th scope="stat">XP</th>
-                <th scope="stat">Rang</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            <?php foreach ($result as $row) : ?>
-                <tr>
-                    <td scope="row" data-label="pseudo"><?php echo $row['pseudo'] ?></td>
-                    <td data-label="filiere"><?php echo $row['filiere'] ?></td>
-                    <td data-label="xp"><?php echo $row['xp'] ?></td>
-                    <td data-label="rang"><?php echo "$ranking" ?></td>
+        <table class="stat">
+            <thread>
+                <tr class="données">
+                    <th scope="stat">Pseudo</th>
+                    <th scope="stat">email</th>
+                    <th scope="stat">Filiere</th>
+                    <th scope="stat">XP</th>
+                    <th scope="stat">Rang</th>
                 </tr>
-                <?php $ranking++; ?>
-            <?php endforeach; ?>
-        </tbody>
-    </table>
+            </thread>
+            <tbody>
+                <tr>
+                    <td scope="row" data-label="pseudo">
+                        <?php echo $_SESSION['pseudo'] ?>
+                    </td>
+                    <td data-label="email">
+                        <?php echo $_SESSION['email'] ?>
+                    </td>
+                    <td data-label="filiere">
+                        <?php echo $_SESSION['filiere'] ?>
+                    </td>
+                    <td data-label="xp">
+                        <?php echo $_SESSION['xp'] ?>
+                    </td>
+                    <td data-label="rang">
+                        <!-- <?php echo "$ranking" ?> -->
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
     </main>
 
 
@@ -104,7 +94,7 @@ try {
 
         document.getElementById("level").style.width = ratio + '%'
 
-        document.documentElement.style.cssText = '--xp :'+ ratio +'%;';
+        document.documentElement.style.cssText = '--xp :' + ratio + '%;';
 
     </script>
 </body>
