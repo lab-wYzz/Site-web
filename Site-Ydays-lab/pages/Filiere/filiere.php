@@ -5,29 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="../../css/filiere.css">
     <link rel="stylesheet" href="../../index.css">
     <title>Question Filiere - Es-tu pret a jouer ?</title>
 </head>
 
 <body>
+    <?php require '../../compenents/topBar.php' ?>
 
     <div class="overlay"></div>
     <div id="modal" class="modal">
-        <span id="modal-btn" class="material-symbols-outlined">
-            cancel
-        </span>
-        <h1>Regle du jeu</h1>
-        <p>Le but est simple ! Pour gagner un point, le joueur doit trouver le bon nombre compris entre 0 et
-            1000 inclus en 10 essais ou moins. </p>
-
-        <p> <img src="../img/warning.png" width="30" height="30" />
-            - Vérifiez bien votre nombre de chance(s) avant de valider car vous pouvez valider 2 fois d'affilée la même
-            réponse !</p>
-        <p>- Vous pouvez récupérer encore <?php echo $data["jeux"][2]['max_tentative']; ?> missiles</p>
+        <h1>Question Filiere</h1>
+        <p>Vous voici dans la catégorie Filière. Vous trouverez ci-dessous les questions proposés chaque jour.
+            Cela marche de manière a pouvoir répondre à 5 questions par jour
+            en rapport avec votre filière.</p>
+        <input id="modal-btn" type="button" value="Jouer" class="btn">
     </div>
     </div>
 
+    <div class="question">
+        <h3>Quelle est l'animal le plus rapide ?</h3>
+        <div class="reponse">
+            <input type="submit" class="btn" value="Le rat">
+            <input type="submit" class="btn" value="Le Leopard">
+            <input type="submit" class="btn" value="le singe">
+            <input type="submit" class="btn" value="Le poisson rouge">
+        </div>
+    </div>
 
+    <?php require '../../compenents/footer.php' ?>
     <script src="../../JS/filiere.js"></script>
 </body>
 

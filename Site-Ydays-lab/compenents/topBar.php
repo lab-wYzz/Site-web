@@ -15,15 +15,9 @@
 
         <div>
             <ul class="link">
-<<<<<<< HEAD
                 <li><a href="../Profil/profil.php">Profil</a></li>
                 <li><a href="../Classement/classement.php">Classement</a></li>
                 <li><a href="../login/logout.php"><i class="fa-solid fa-right-from-bracket"></i></a></li>
-=======
-                <li><a href="#">Profil</a></li>
-                <li><a href="../Classement/classement.php">Classement</a></li>
-
->>>>>>> 93873281c344a9a697e59edc8aaedbb8cd42e6cb
             </ul>
         </div>
     </header>

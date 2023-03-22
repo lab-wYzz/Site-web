@@ -1,8 +1,8 @@
-@import "./css/connexion.css";
-@import "./css/inscription.css";
-@import "./css/accueil.css";
-@import "./css/score.css";
-@import "./css/topBar.css";
-@import "./css/footer.css";
-@import "./css/filiere.css";
-@import "./css/profil.css";
+@import url("./css/connexion.css");
+@import url("./css/inscription.css");
+@import url("./css/accueil.css");
+@import url("./css/score.css");
+@import url("./css/topBar.css");
+@import url("./css/footer.css");
+@import url("./css/filiere.css");
+@import url("./css/profil.css");

@@ -41,7 +41,7 @@ try {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 
-    <title>Accueil - Commence a choisir ce que tu veux faire !!</title>
+    <title>Profil - Regarde tes statistiques !!</title>
     <link rel="stylesheet" href="../../index.css">
 </head>
 
@@ -56,7 +56,34 @@ try {
                 <div class="progress-fill" id="level"></div>
             </div>
         </div>
+
+        <table>
+        <thead>
+            <tr>
+                <th colspan="5">Classement General</th>
+            </tr>
+            <tr class="thead">
+                <th scope="stat">Pseudo</th>
+                <th scope="stat">Filiere</th>
+                <th scope="stat">XP</th>
+                <th scope="stat">Rang</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <?php foreach ($result as $row) : ?>
+                <tr>
+                    <td scope="row" data-label="pseudo"><?php echo $row['pseudo'] ?></td>
+                    <td data-label="filiere"><?php echo $row['filiere'] ?></td>
+                    <td data-label="xp"><?php echo $row['xp'] ?></td>
+                    <td data-label="rang"><?php echo "$ranking" ?></td>
+                </tr>
+                <?php $ranking++; ?>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
     </main>
+
 
     <?php require '../../compenents/footer.php' ?>
 

@@ -32,7 +32,7 @@
 
             <div class="categories">
                 <h2>Categories</h2>
-                <h4><a href="#">Filiere</a></h4>
+                <h4><a href="../Filiere/filiere.php">Filiere</a></h4>
                 <h4><a href="#">Culture G</a></h4>
                 <h4><a href="#">Mini Jeux</a></h4>
             </div>
