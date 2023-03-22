@@ -16,3 +16,4 @@ modalBtn.addEventListener("click", (e) => {
     e.preventDefault();
     closePopup();
 });
+

@@ -26,6 +26,7 @@ body::-webkit-scrollbar-thumb {
     border-radius: 20px;
 }
 
+
 .mainAccueil {
     display: flex;
     justify-content: space-around;
