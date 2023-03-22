@@ -53,9 +53,9 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><img class="categorie" src="../../assets/CultureGe.png" alt="Culture general"></div>
-                <div class="swiper-slide"><img class="categorie" src="../../assets/miniJeux.png" alt="Mini Jeux"></div>
-                <div class="swiper-slide"><img class="categorie" src="../../assets/filiere.png" alt="Filiere"></div>
+                <div class="swiper-slide"><a href="../question/question.php"><img class="categorie" src="../../assets/CultureGe.png" alt="Culture general"></a></div>
+                <div class="swiper-slide"><a href=""><img class="categorie" src="../../assets/miniJeux.png" alt="Mini Jeux"></a></div>
+                <div class="swiper-slide"><a href=""><img class="categorie" src="../../assets/filiere.png" alt="Filiere"></a></div>
             </div>
 
             <!-- If we need navigation buttons -->
