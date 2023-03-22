@@ -1,30 +1,39 @@
-
 <?php
 
+session_start();
+
 $filiere = "cultureG";
-$test = "";
 $quest;
 $reponse = array();
 $R1;
 
+if ($_SESSION["quest_stage"] > 5) {
+    $_SESSION["serie_xp"] = array();
+    $_SESSION["quest_stage"] = 1;
+    $_SESSION["xp_to_add"] = 0;
+}
 
+$serie_xp = "";
+
+foreach ($_SESSION["serie_xp"] as $elm) {
+    $serie_xp = $serie_xp . ", " . $elm;
+}
+
+$quest_stage = $_SESSION["quest_stage"];
 
 // accède à la base de données SQL
 $dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
 $requete = "SELECT * FROM question WHERE filiere = '$filiere' ORDER BY rand() LIMIT 1";
 $result = $dbh->query($requete);
-foreach ($result as $row) { 
+foreach ($result as $row) {
     $quest = $row["quest"];
-    array_push($reponse,$row["R1"],$row["R2"],$row["R3"],$row["R4"]);
+    array_push($reponse, $row["R1"], $row["R2"], $row["R3"], $row["R4"]);
     $R1 = $reponse[0];
-    shuffle($reponse);    
+    $_SESSION["Good_rep"] = $R1;
+    shuffle($reponse);
 }
 
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -41,22 +50,27 @@ foreach ($result as $row) {
 </head>
 
 <body>
-    
 
     <main>
 
         <div class="quiz">
-            <h3 class="question"><?= $quest, $R1 ?></h3>
-            <div class="reponse">
-                <button class="btn-reponse"><?= $reponse[0] ?></button>
-                <button class="btn-reponse"><?= $reponse[1] ?></button>
-                <button class="btn-reponse"><?= $reponse[2] ?></button>
-                <button class="btn-reponse"><?= $reponse[3] ?></button>
-            </div>
+            <h3 class="question">
+                <?= $quest, $R1 ?>
+            </h3>
+            <form action="next_quest.php" id="rep" class="reponse">
+                <input type="submit" id="REP1" class="btn-reponse" name="rep" value="<?= $reponse[0] ?>">
+                <input type="submit" id="REP2" class="btn-reponse" name="rep" value="<?= $reponse[1] ?>">
+                <input type="submit" id="REP3" class="btn-reponse" name="rep" value="<?= $reponse[2] ?>">
+                <input type="submit" id="REP4" class="btn-reponse" name="rep" value="<?= $reponse[3] ?>">
+            </form>
         </div>
+        <p>
+            <?= $quest_stage ?>,
+            <?= $serie_xp ?>,
+            <?= $_SESSION["xp_to_add"] ?>
+        </p>
 
     </main>
-
 
     <script src="../../JS/question.js"></script>
     <script>
