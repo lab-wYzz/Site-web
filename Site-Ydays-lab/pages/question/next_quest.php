@@ -21,11 +21,8 @@ if (!isset($_SESSION["quest_stage"])){
         array_push($_SESSION["serie_xp"],"bad");
     }
 
+
     header('Location: ../Addxp/addxp.php');
-    // $_SESSION["serie_xp"] = array();
-    $_SESSION["quest_stage"] = 1;
-    // $_SESSION["xp_to_add"] = 0;
-    // header('Location: ./question.php');
 
 }else{
 

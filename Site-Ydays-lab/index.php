@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>wYzz</title>
+    <meta http-equiv="refresh" content="0; url = ./pages/Connexion/connexion.php" />
 </head>
 
 <body>
