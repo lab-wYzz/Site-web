@@ -61,7 +61,7 @@ try {
                             src="../../assets/Filiere.png" alt="Culture general"></a></div>
                 <div class="swiper-slide"> <a href="../CultureG/cultureG.php"><img class="categorie"
                             src="../../assets/CultureG.png" alt="Mini Jeux"></a></div>
-                <div class="swiper-slide"><img class="categorie" src="../../assets/MiniJeu.png" alt="Filiere"></div>
+                <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie" src="../../assets/MiniJeu.png" alt="Filiere"></a></div>
             </div>
 
             <!-- If we need navigation buttons -->
@@ -109,7 +109,7 @@ try {
     <script type="module">
     import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 500;
 
     document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
 
