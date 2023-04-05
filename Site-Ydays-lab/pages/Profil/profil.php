@@ -33,14 +33,7 @@ session_start();
     <?php require '../../compenents/topBar.php' ?>
 
     <main class="mainProfil">
-        <div class="rankProfil">
-            <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
-            <span id="xp_value">test</span>
-            <div class="progress-bar">
-                <div class="progress-fill" id="level"></div>
-            </div>
-        </div>
-
+        
         <table class="stat">
             <thread>
                 <tr class="données">
@@ -69,12 +62,19 @@ session_start();
                         <!-- <?php echo "$ranking" ?> -->
                     </td>
                 </tr>
-
+                
             </tbody>
         </table>
+        <div class="rankProfil">
+            <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
+            <span id="xp_value">test</span>
+            <div class="progress-bar">
+                <div class="progress-fill" id="level"></div>
+            </div>
+        </div>
     </main>
-
-
+    
+    
     <?php require '../../compenents/footer.php' ?>
 
 

@@ -6,7 +6,7 @@
     box-sizing: border-box;
 }
 
-:root{
+:root {
     --xp: 50%;
 }
 
@@ -28,8 +28,9 @@ body::-webkit-scrollbar-thumb {
 
 .mainProfil {
     display: flex;
-    align-items: center;
+    justify-content: space-around;
     margin: 5%;
+
 }
 
 .rankProfil {
@@ -38,7 +39,6 @@ body::-webkit-scrollbar-thumb {
     align-items: center;
     justify-content: space-between;
     margin-top: -50px;
-    margin-left: 60%;
 }
 
 .rankLogoProfil {
@@ -62,29 +62,33 @@ body::-webkit-scrollbar-thumb {
     border-radius: 15px;
 }
 
-.scroll{
+.scroll {
     height: 100px;
 }
 
 .stat {
     display: flex;
     flex-direction: row;
-    align-items: center;
     margin-top: 50px;
-    margin-left: -75%;
 }
 
 table {
     background-color: #E2E9ED;
     margin: 0 auto;
     margin-top: 50px;
-    margin-right: 5%;
     height: 350px;
     color: #2C2D30;
     border-radius: 20px;
 }
 
+.données {
+    display: flex;
+    flex-direction: column;
+}
+
 table tr {
+    display: flex;
+    flex-direction: column;
     padding: 10px;
 }
 
@@ -97,12 +101,13 @@ table td {
     padding: 20px;
     text-align: center;
     border-left: 1px solid #2C2D30;
+    max-height: 65px;
 }
 
 tbody {
     align-items: center;
     height: 30px;
-   flex-direction: row;
+    flex-direction: row;
 }
 
 table th {

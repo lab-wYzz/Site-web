@@ -22,7 +22,6 @@
             culture général pour pouvoir gagner d’avantage d’xp.</p>
         <input id="modal-btn" type="button" value="Jouer" class="btn">
     </div>
-    </div>
 
     <div class="question">
         <h3>Quelle est l'animal le plus rapide ?</h3>
