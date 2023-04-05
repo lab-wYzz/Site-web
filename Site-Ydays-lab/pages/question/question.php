@@ -7,9 +7,8 @@ $quest;
 $reponse = array();
 $R1;
 
-if ($_SESSION["quest_stage"] > 5) {
+if ($_SESSION["quest_stage"] == 1) {
     $_SESSION["serie_xp"] = array();
-    $_SESSION["quest_stage"] = 1;
     $_SESSION["xp_to_add"] = 0;
 }
 
