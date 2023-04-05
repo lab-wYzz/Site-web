@@ -28,7 +28,6 @@ body::-webkit-scrollbar-thumb {
 
 .mainProfil {
     display: flex;
-    align-items: center;
     justify-content: space-around;
     margin: 5%;
 
@@ -68,7 +67,6 @@ body::-webkit-scrollbar-thumb {
 }
 
 .stat {
-    width: 800px;
     display: flex;
     flex-direction: row;
     margin-top: 50px;
@@ -78,7 +76,6 @@ table {
     background-color: #E2E9ED;
     margin: 0 auto;
     margin-top: 50px;
-    margin-right: 5%;
     height: 350px;
     color: #2C2D30;
     border-radius: 20px;
