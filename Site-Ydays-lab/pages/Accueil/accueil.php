@@ -109,7 +109,7 @@ try {
     <script type="module">
     import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 500;
 
     document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
 

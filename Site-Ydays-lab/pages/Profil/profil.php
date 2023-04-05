@@ -41,7 +41,11 @@ session_start();
             </div>
         </div>
 
+<<<<<<< HEAD
         <table>
+=======
+        <table class="stat">
+>>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
             <thread>
                 <tr class="données">
                     <th scope="stat">Pseudo</th>
@@ -50,7 +54,11 @@ session_start();
                     <th scope="stat">XP</th>
                     <th scope="stat">Rang</th>
                 </tr>
+<<<<<<< HEAD
             </thread>s
+=======
+            </thread>
+>>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
             <tbody>
                 <tr>
                     <td scope="row" data-label="pseudo">
@@ -59,16 +67,27 @@ session_start();
                     <td data-label="email">
                         <?php echo $_SESSION['email'] ?>
                     </td>
+<<<<<<< HEAD
                     <td data-label="filiere">s
+=======
+                    <td data-label="filiere">
+>>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
                         <?php echo $_SESSION['filiere'] ?>
                     </td>
                     <td data-label="xp">
                         <?php echo $_SESSION['xp'] ?>
                     </td>
                     <td data-label="rang">
+<<<<<<< HEAD
                         <?php echo "$ranking" ?>
                     </td>
                 </tr>
+=======
+                        <!-- <?php echo "$ranking" ?> -->
+                    </td>
+                </tr>
+
+>>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
             </tbody>
         </table>
     </main>
