@@ -31,7 +31,7 @@ body::-webkit-scrollbar-thumb {
     margin-top: 80px;
 }
 
-.rank {
+.rankProfil {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,7 +39,7 @@ body::-webkit-scrollbar-thumb {
     margin-right: -50%;
 }
 
-.rankLogo {
+.rankLogoProfil {
     width: 500px;
     height: 500px;
 }
@@ -66,13 +66,10 @@ body::-webkit-scrollbar-thumb {
 
 table {
     background-color: #E2E9ED;
-    border: 1px solid #2C2D30;
-    border-collapse: collapse;
     margin: 0 auto;
     margin-top: 50px;
-    max-width: 10000px;
+    max-width: 1000px;
     height: 400px;
-    table-layout: fixed;
     color: #2C2D30;
     border-radius: 20px;
 }
@@ -81,7 +78,7 @@ table tr {
     padding: 10px;
 }
 
-.thead {
+.thread {
     border: 1px solid #2C2D30;
 }
 
