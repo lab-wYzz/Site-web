@@ -33,23 +33,8 @@ session_start();
     <?php require '../../compenents/topBar.php' ?>
 
     <main class="mainProfil">
-<<<<<<< HEAD
-        <div class="rankProfil">
-            <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
-            <span id="xp_value">test</span>
-            <div class="progress-bar">
-                <div class="progress-fill" id="level"></div>
-            </div>
-        </div>
-
-<<<<<<< HEAD
-        <table>
-=======
-=======
         
->>>>>>> 7fe19b206045223b617acbb9d044879e5dda301b
         <table class="stat">
->>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
             <thread>
                 <tr class="données">
                     <th scope="stat">Pseudo</th>
@@ -58,11 +43,7 @@ session_start();
                     <th scope="stat">XP</th>
                     <th scope="stat">Rang</th>
                 </tr>
-<<<<<<< HEAD
-            </thread>s
-=======
             </thread>
->>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
             <tbody>
                 <tr>
                     <td scope="row" data-label="pseudo">
@@ -71,31 +52,17 @@ session_start();
                     <td data-label="email">
                         <?php echo $_SESSION['email'] ?>
                     </td>
-<<<<<<< HEAD
-                    <td data-label="filiere">s
-=======
                     <td data-label="filiere">
->>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
                         <?php echo $_SESSION['filiere'] ?>
                     </td>
                     <td data-label="xp">
                         <?php echo $_SESSION['xp'] ?>
                     </td>
                     <td data-label="rang">
-<<<<<<< HEAD
-                        <?php echo "$ranking" ?>
-                    </td>
-                </tr>
-=======
                         <!-- <?php echo "$ranking" ?> -->
                     </td>
                 </tr>
-<<<<<<< HEAD
-
->>>>>>> 99a6af57f37eddc96dface63f5d0863018a133ba
-=======
                 
->>>>>>> 7fe19b206045223b617acbb9d044879e5dda301b
             </tbody>
         </table>
         <div class="rankProfil">
