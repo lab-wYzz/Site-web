@@ -8,6 +8,15 @@
 </head>
 
 <body>
+	<div class="overlay"></div>
+	<div id="modal" class="modal">
+		<h1>Memory</h1>
+		<p>Le but de ce jeu est de tester votre mémoire visuelle et votre capacité à vous souvenir des séquences de
+			couleurs. C'est un jeu amusant et stimulant qui peut être joué seul ou avec des amis pour voir qui peut
+			obtenir le meilleur score.</p>
+		<input id="modal-btn" type="button" value="Jouer" class="btn">
+	</div>
+
 	<div id="game">
 		<div class="row">
 			<div class="color-box" id="red"></div>
