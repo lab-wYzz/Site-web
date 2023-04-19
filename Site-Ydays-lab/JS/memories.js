@@ -1,5 +1,5 @@
 const game = document.getElementById("game");
-const startButton = document.getElementById("modal-btn");
+const startButton = document.querySelector(".start");
 const colorBoxes = document.getElementsByClassName("color-box");
 const colors = ["red", "green", "blue", "yellow"];
 let sequence = [];

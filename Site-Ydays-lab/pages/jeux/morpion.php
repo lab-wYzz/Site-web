@@ -18,8 +18,9 @@
             accomplir cela gagne la partie.
             Si toutes les cases sont remplies et qu'aucun joueur n'a réussi à aligner trois marques, la partie se
             termine en un match nul.</p>
-        <input id="modal-btn" type="button" value="Jouer" class="btn">
+        <input id="modal-btn" type="button" value="Commencer" class="btn">
     </div>
+
     <h1>Morpion</h1>
     <div id="grid">
         <div id="c1" class="case"></div>
@@ -40,6 +41,8 @@
         <div class="message"></div>
     </div>
     <script src="../../JS/morpion.js"></script>
+    <script src="../../JS/popup.js"></script>
+
 </body>
 
 </html>
