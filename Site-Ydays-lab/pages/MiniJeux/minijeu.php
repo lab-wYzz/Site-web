@@ -45,12 +45,12 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
         </a>
         <a id="mastermind-link" href="../jeux/memories.php">
             <div class="master">
-                Mastermind
+                Génius
             </div>
         </a>
         <a id="morpion-link" href="../jeux/mastermind.php">
             <div class="morpion">
-                Génius
+                Mastermind
             </div>
         </a>
     </div>

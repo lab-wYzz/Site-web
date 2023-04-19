@@ -12,24 +12,25 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="mastermind.css">
+        <link rel="stylesheet" href="../../index.css">
         <title>Mastermind</title>
     </head>
 
 <body>
 
-    <nav class="topBar">
-        <h1><a href="../index.php">Challenge-48H</a></h1>
-        
-    </nav>
-<?php
- ?>
-    <div class="overlay"></div>
+    <?php include "../../compenents/topBar.php" ?>
+
+    <h1>Mastermind</h1>
+
+
+    <!-- <div class="overlay"></div> -->
+    <!--
     <div id="modal" class="modal">
         <span id="modal-btn" class="material-symbols-outlined">
             cancel
         </span>
 
-        <!--  
+          
         <div class="modalContenue">
             <h1>Regle du jeu</h1>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod optio cum porro reprehenderit sed at illum.
@@ -42,8 +43,10 @@
                 repellendus?
             </p>
         </div>
+       
     </div>
      -->
+
     <main class="main">
         <div class="game">
             <div class="try">
@@ -64,9 +67,9 @@
             </div>
         </div>
 
-    
+
     </main>
-   
+
     <script src="mastermind.js"></script>
 
 </body>

@@ -5,10 +5,10 @@ const overlay = document.querySelector(".overlay");
 
 
 
-modalBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+// modalBtn.addEventListener("click", (e) => {
+//     e.preventDefault();
    
-});
+// });
 
 let varCopie = [];
 let varEssai = [];
@@ -79,20 +79,14 @@ function Main(color, element) {
                     essai.innerHTML += "<br>Essai " + (nbEssai + 1) + " \xa0 : \xa0 ";
                 } else {
                     essai.innerHTML += "<br>Vous avez perdu ! ";
+                    setTimeout(function (){
+                        alert("bye")
+                    },1000)
                 }
             } else {
                 if (BP >= 4) {
                     essai.innerHTML += "<br>Vous avez gagné ! ";
-                    $.ajax({
-                        type: "POST",
-                        success: function (response) {
-                            console.log("OK => " + response);
-                            location.reload();
-                        },
-                        error: function (response) {
-                            console.log("ERREUR => " + response);
-                        }
-                    });
+                    
                 }
             }
             codeplace = 0;
