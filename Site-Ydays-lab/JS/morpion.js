@@ -1,4 +1,5 @@
 const cases = [...document.getElementsByClassName("case")];
+const message = document.getElementById("message");
 let joueur = document.getElementById("joueur");
 let score1 = document.getElementById("score1");
 let score2 = document.getElementById("score2");
@@ -43,7 +44,6 @@ const verifierVictoire = () => {
     (state.c4 == state.c5 && state.c5 == state.c6 && state.c4 > 0) ||
     (state.c7 == state.c8 && state.c8 == state.c9 && state.c7 > 0)
   ) {
-    console.log("winner !");
     return true;
   } else if (
     state.c1 !== 0 &&
@@ -80,7 +80,7 @@ const jouerCase = (e) => {
     }
     resetState();
     cases.forEach((c) => (c.textContent = ""));
-   
+
   } else if (isVctoire === null) {
     // si nul
     alert("match nul");
@@ -146,5 +146,5 @@ const jouerTourOrdinateur = () => {
 
 cases.forEach((c) => c.addEventListener("click", jouerCase));
 
-header("Location: Addxp.php?xp=10")
+// header("Location: Addxp.php?xp=10")
 
