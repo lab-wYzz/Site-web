@@ -21,10 +21,11 @@
       <div id="c9" class="case"></div>
     </div>
     <div id="score">
-      <p>C'est au tour de Joueur <span id="joueur">1</span></p>
-      <p>Score Joueur 1 : <span id="score1">0</span></p>
-      <p>Score Ordinateur : <span id="score2">0</span></p>
-      <p>Matchs nuls : <span id="scoreNul">0</span></p>
+      <p><span id="joueur"></span></p>
+      <p> <span id="score1"></span></p>
+      <p> 
+        <span id="score2"></span></p>
+      <p><span id="scoreNul"></span></p>
     </div>
     <script src="./morpion.js"></script>
   </body>
