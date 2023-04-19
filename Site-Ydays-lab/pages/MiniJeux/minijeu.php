@@ -17,7 +17,8 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link rel="stylesheet" href="../../css/minijeu.css">
     <link rel="stylesheet" href="../../index.css">
     <title>Mini Jeux - Es-tu pret a jouer ?</title>
@@ -37,12 +38,21 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     </div>
 
     <div class="game">
-        <div class="morpion">
-            <a id="morpion-link" href="../jeux/morpion.php">Morpion</a>
-        </div>
-        <div class="master">
-            <a id="master-link" href="../jeux/reflexe.php">Génius</a>
-        </div>
+        <a id="morpion-link" href="../jeux/morpion.php">
+            <div class="morpion">
+                Morpion
+            </div>
+        </a>
+        <a id="mastermind-link" href="../jeux/reflexe.php">
+            <div class="master">
+                Mastermind
+            </div>
+        </a>
+        <a id="morpion-link" href="../jeux/mastermind.php">
+            <div class="morpion">
+                Génius
+            </div>
+        </a>
     </div>
 
 
