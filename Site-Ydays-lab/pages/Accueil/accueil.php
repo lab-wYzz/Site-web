@@ -78,7 +78,7 @@ try {
 
 
         <div class="rank">
-            <img class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
+            <img id="imgrank" class="rankLogo" src="../../assets/rank-1.png" alt="Rank">
             <span id="xp_value">test</span>
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
