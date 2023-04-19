@@ -129,7 +129,6 @@ function CalculMP(vec1, vec2) {
     }
     return mp;
 }
-header('Location: ../../Gain-Exp/addxp.php'); 
 
 
 
