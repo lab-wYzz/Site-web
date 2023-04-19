@@ -77,6 +77,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 15px;
 }
 
+.pseudo {
+    font-size: 2vw;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
 .scroll {
     height: 100px;
 }
@@ -92,6 +98,8 @@ table {
     table-layout: fixed;
     color: #2C2D30;
     border-radius: 20px;
+
+
 }
 
 table tr {
@@ -111,6 +119,7 @@ table td {
 
 tbody {
     height: 30px;
+    overflow-y: scroll;
 }
 
 table th {

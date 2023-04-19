@@ -2,6 +2,16 @@
 
 session_start();
 
+// empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {   
+    header('Location: ../login/logout.php');
+    exit();
+}
+
+if (!isset($_SESSION["quest_stage"])) {
+    header('Location: ./next_quest.php');
+}
+
 $filiere = "cultureG";
 $quest;
 $reponse = array();
@@ -45,22 +55,27 @@ foreach ($result as $row) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../css/question.css">
-    <title>Question {var de la progression} - Arriveras-tu a repondre ?</title>
+    <link rel="stylesheet" href="../../index.css">
+    <title>Question
+        <?= $_SESSION["quest_stage"] ?> - Arriveras-tu a repondre ?
+    </title>
 </head>
 
 <body>
+    <?php require '../../compenents/topBar.php' ?>
 
     <main>
+        <p><?= $_SESSION["quest_stage"] ?>/5</p>
 
-        <div class="quiz">
-            <h3 class="question">
+        <div class="question">
+            <h3>
                 <?= $quest, $R1 ?>
             </h3>
             <form action="next_quest.php" id="rep" class="reponse">
-                <input type="submit" id="REP1" class="btn-reponse" name="rep" value="<?= $reponse[0] ?>">
-                <input type="submit" id="REP2" class="btn-reponse" name="rep" value="<?= $reponse[1] ?>">
-                <input type="submit" id="REP3" class="btn-reponse" name="rep" value="<?= $reponse[2] ?>">
-                <input type="submit" id="REP4" class="btn-reponse" name="rep" value="<?= $reponse[3] ?>">
+                <input type="submit" id="REP1" class="btn" name="rep" value="<?= $reponse[0] ?>">
+                <input type="submit" id="REP2" class="btn" name="rep" value="<?= $reponse[1] ?>">
+                <input type="submit" id="REP3" class="btn" name="rep" value="<?= $reponse[2] ?>">
+                <input type="submit" id="REP4" class="btn" name="rep" value="<?= $reponse[3] ?>">
             </form>
         </div>
         <p>

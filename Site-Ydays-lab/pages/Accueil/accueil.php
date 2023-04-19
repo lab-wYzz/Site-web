@@ -2,6 +2,12 @@
 
 session_start();
 
+// empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {
+    header('Location: ../login/logout.php');
+    exit();
+}
+
 $user = "root";
 $pass = "";
 $bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
@@ -57,11 +63,12 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"> <a href="../Filiere/filiere.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../Filiere/filiere.php"><img class="categorie"
                             src="../../assets/Filiere.png" alt="Culture general"></a></div>
-                <div class="swiper-slide"> <a href="../CultureG/cultureG.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../CultureG/cultureG.php"><img class="categorie"
                             src="../../assets/CultureG.png" alt="Mini Jeux"></a></div>
-                <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie" src="../../assets/MiniJeu.png" alt="Filiere"></a></div>
+                <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie"
+                            src="../../assets/MiniJeu.png" alt="Filiere"></a></div>
             </div>
 
             <!-- If we need navigation buttons -->
@@ -76,6 +83,7 @@ try {
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
             </div>
+            <h2 class="pseudo"><?php echo $_SESSION['pseudo'] ?></h2>
         </div>
 
         <table>
