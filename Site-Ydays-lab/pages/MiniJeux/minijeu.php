@@ -38,6 +38,17 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     </div>
 
     <div class="game">
+<<<<<<< HEAD
+        <div class="morpion">
+            <a id="morpion-link" href="../jeux/morpion.php">Morpion</a>
+        </div>
+        <div class="genius">
+            <a id="genius-link" href="../jeux/reflexe.php">Génius</a>
+        </div>
+        <div class="master">
+            <a id="master-link" href="../jeux/reflexe.php">Mastermind</a>
+        </div>
+=======
         <a id="morpion-link" href="../jeux/morpion.php">
             <div class="morpion">
                 Morpion
@@ -53,6 +64,7 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
                 Mastermind
             </div>
         </a>
+>>>>>>> ff1fa4d69be4ef75006ba97217147dcbbe814f15
     </div>
 
 
