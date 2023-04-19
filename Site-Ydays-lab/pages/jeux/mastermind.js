@@ -1,14 +1,3 @@
-//Fenetre modal
-const modalBtn = document.getElementById("modal-btn");
-const modal = document.getElementById("modal");
-const overlay = document.querySelector(".overlay");
-
-
-
-// modalBtn.addEventListener("click", (e) => {
-//     e.preventDefault();
-   
-// });
 
 let varCopie = [];
 let varEssai = [];

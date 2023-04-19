@@ -11,6 +11,10 @@
 
 <body>
 
+    <?php include "../../compenents/topBar.php" ?>
+
+    <h1>Morpion</h1>
+
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <h1>Morpion</h1>

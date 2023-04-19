@@ -8,6 +8,11 @@
 </head>
 
 <body>
+
+    <?php include "../../compenents/topBar.php" ?>
+
+    <h1>Memories</h1>
+
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <h1>Memory</h1>
