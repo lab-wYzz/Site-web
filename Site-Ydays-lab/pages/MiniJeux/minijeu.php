@@ -25,6 +25,9 @@
         <div class="morpion">
             <a id="morpion-link" href="">Morpion</a>
         </div>
+        <div class="master">
+            <a id="master-link" href="">Mastermind</a>
+        </div>
     </div>
     <script src="../../JS/popup.js"></script>
 </body>
