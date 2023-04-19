@@ -43,7 +43,7 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
                 Morpion
             </div>
         </a>
-        <a id="mastermind-link" href="../jeux/reflexe.php">
+        <a id="mastermind-link" href="../jeux/memories.php">
             <div class="master">
                 Mastermind
             </div>
