@@ -63,11 +63,12 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"> <a href="../Filiere/filiere.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../Filiere/filiere.php"><img class="categorie"
                             src="../../assets/Filiere.png" alt="Culture general"></a></div>
-                <div class="swiper-slide"> <a href="../CultureG/cultureG.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../CultureG/cultureG.php"><img class="categorie"
                             src="../../assets/CultureG.png" alt="Mini Jeux"></a></div>
-                <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie" src="../../assets/MiniJeu.png" alt="Filiere"></a></div>
+                <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie"
+                            src="../../assets/MiniJeu.png" alt="Filiere"></a></div>
             </div>
 
             <!-- If we need navigation buttons -->
