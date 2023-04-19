@@ -125,23 +125,42 @@ try {
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 500;
+        var xp = <?= $_SESSION["xp"] ?>;
+        var ratio = 0;
 
-        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+        if (xp >= 0 && xp < 500) {
+            ratio = (xp * 100) / 500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-1.png");
+        } else if (xp >= 500 && xp < 1500) {
+            ratio = ((xp - 500) * 100) / 1000;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-2.png");
+        } else if (xp >= 1500 && xp < 3000) {
+            ratio = ((xp - 1500) * 100) / 1500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-3.png");
+        } else if (xp >= 3000 && xp < 5000) {
+            ratio = ((xp - 3000) * 100) / 2000;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-4.png");
+        } else if (xp >= 5000 && xp < 7500) {
+            ratio = ((xp - 5000) * 100) / 2500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-5.png");
+        } else if (xp >= 7500 && xp < 10000) {
+            ratio = ((xp - 7500) * 100) / 2500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-6.png");
+        } else {
+            ratio = 100;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-7.png");
+        }
 
         if (ratio > 100) {
             ratio = 100;
         }
 
-        console.log(ratio);
-
-        document.getElementById("level").style.width = ratio + '%'
-
+        document.getElementById("xp_value").innerHTML = xp + " XP (" + ratio.toFixed(2) + "%)";
+        document.getElementById("level").style.width = ratio + '%';
         document.documentElement.style.cssText = '--xp :' + ratio + '%;';
 
-        // Récupérer l'élément image et l'xp
+        // Récupérer l'élément image
         const img = document.getElementById("imgrank");
-        const xp = <?= $_SESSION["xp"] ?>;
 
         // Vérifier si l'xp est supérieure à 500
         if (xp >= 500 && xp < 1500) {
@@ -155,7 +174,7 @@ try {
             img.setAttribute("src", "../../assets/rank-5.png");
         } else if (xp >= 7500 && xp < 10000) {
             img.setAttribute("src", "../../assets/rank-6.png");
-        }else if (xp >= 1000 && xp < 100000) {
+        } else if (xp >= 1000 && xp < 100000) {
             img.setAttribute("src", "../../assets/rank-7.png");
         }
     </script>
