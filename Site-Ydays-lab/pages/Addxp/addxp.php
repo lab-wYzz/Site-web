@@ -21,4 +21,5 @@ $_SESSION["xp_to_add"] = 0;
 
 echo ($serie_xp. " , ".$_SESSION["xp_added"]);
 
+header("Location: ../MiniJeux/minijeux.php")
 ?>

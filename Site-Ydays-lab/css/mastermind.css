@@ -1,0 +1,46 @@
+.game {
+    display: flex;
+}
+
+.try {
+    margin-right: 100px;
+}
+
+.contentBtn {
+    margin-top: 30px;
+    margin-right: 10px;
+}
+
+.button {
+    height: 50px;
+    width: 50px;
+    border-radius: 1500px;
+}
+
+#rouge {
+    background-color: red;
+}
+
+#bleu {
+    background-color: blue;
+}
+
+#vert {
+    background-color: green;
+}
+
+#jaune {
+    background-color: yellow;
+}
+
+#cyan {
+    background-color: cyan;
+}
+
+#orange {
+    background-color: orange;
+}
+
+#marron {
+    background-color: brown;
+}
