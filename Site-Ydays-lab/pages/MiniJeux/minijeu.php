@@ -18,7 +18,6 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="../../css/minijeu.css">
     <link rel="stylesheet" href="../../index.css">
     <title>Mini Jeux - Es-tu pret a jouer ?</title>
 </head>
@@ -41,7 +40,7 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
             <a id="morpion-link" href="../jeux/morpion.php">Morpion</a>
         </div>
         <div class="master">
-            <a id="master-link" href="../jeux/reflexe.php">Génius</a>
+            <a id="master-link" href="../jeux/memories.php">Génius</a>
         </div>
     </div>
 
