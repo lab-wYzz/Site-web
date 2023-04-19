@@ -77,6 +77,12 @@ body::-webkit-scrollbar-thumb {
     border-radius: 15px;
 }
 
+.pseudo {
+    font-size: 2vw;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
 .scroll {
     height: 100px;
 }

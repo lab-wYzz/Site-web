@@ -3,7 +3,7 @@
 session_start();
 
 // empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
-if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {   
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {
     header('Location: ../login/logout.php');
     exit();
 }
@@ -83,6 +83,7 @@ try {
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
             </div>
+            <h2 class="pseudo"><?php echo $_SESSION['pseudo'] ?></h2>
         </div>
 
         <table>
