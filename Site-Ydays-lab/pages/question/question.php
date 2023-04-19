@@ -2,6 +2,12 @@
 
 session_start();
 
+// empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {   
+    header('Location: ../login/logout.php');
+    exit();
+}
+
 if (!isset($_SESSION["quest_stage"])) {
     header('Location: ./next_quest.php');
 }
