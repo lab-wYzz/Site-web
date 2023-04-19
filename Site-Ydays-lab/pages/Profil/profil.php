@@ -33,9 +33,12 @@ session_start();
     <?php require '../../compenents/topBar.php' ?>
 
     <main class="mainProfil">
-        
-        <table class="stat">
-            <thread>
+
+        <table class="stats">
+            <thread class="thread">
+                <tr class="title">
+                    <th colspan="5">Statistiques personnelles</th>
+                </tr>
                 <tr class="données">
                     <th scope="stat">Pseudo</th>
                     <th scope="stat">email</th>
@@ -44,7 +47,7 @@ session_start();
                     <th scope="stat">Rang</th>
                 </tr>
             </thread>
-            <tbody>
+            <tbody class="tbody">
                 <tr>
                     <td scope="row" data-label="pseudo">
                         <?php echo $_SESSION['pseudo'] ?>
@@ -62,9 +65,10 @@ session_start();
                         <!-- <?php echo "$ranking" ?> -->
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
+
         <div class="rankProfil">
             <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
             <span id="xp_value">test</span>
@@ -73,29 +77,28 @@ session_start();
             </div>
         </div>
     </main>
-    
-    
+
+
     <?php require '../../compenents/footer.php' ?>
 
 
     <script src="../../JS/profil.js"></script>
     <script type="module">
-        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
 
-        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+    document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
 
-        if (ratio > 100) {
-            ratio = 100;
-        }
+    if (ratio > 100) {
+        ratio = 100;
+    }
 
-        console.log(ratio);
+    console.log(ratio);
 
-        document.getElementById("level").style.width = ratio + '%'
+    document.getElementById("level").style.width = ratio + '%'
 
-        document.documentElement.style.cssText = '--xp :' + ratio + '%;';
-
+    document.documentElement.style.cssText = '--xp :' + ratio + '%;';
     </script>
 </body>
 
