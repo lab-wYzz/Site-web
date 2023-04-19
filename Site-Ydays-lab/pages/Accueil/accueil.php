@@ -83,7 +83,9 @@ try {
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
             </div>
-            <h2 class="pseudo"><?php echo $_SESSION['pseudo'] ?></h2>
+            <h2 class="pseudo">
+                <?php echo $_SESSION['pseudo'] ?>
+            </h2>
         </div>
 
         <table>
@@ -98,13 +100,19 @@ try {
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($result as $row) : ?>
-                <tr>
-                    <td data-label="pseudo"><?php echo $row['pseudo'] ?></td>
-                    <td data-label="xp"><?php echo $row['xp'] ?></td>
-                    <td data-label="rang"><?php echo "$ranking" ?></td>
-                </tr>
-                <?php $ranking++; ?>
+                <?php foreach ($result as $row): ?>
+                    <tr>
+                        <td data-label="pseudo">
+                            <?php echo $row['pseudo'] ?>
+                        </td>
+                        <td data-label="xp">
+                            <?php echo $row['xp'] ?>
+                        </td>
+                        <td data-label="rang">
+                            <?php echo "$ranking" ?>
+                        </td>
+                    </tr>
+                    <?php $ranking++; ?>
                 <?php endforeach; ?>
             </tbody>
         </table>
@@ -115,21 +123,41 @@ try {
 
     <script src="../../JS/accueil.js"></script>
     <script type="module">
-    import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-    var ratio = (<?= $_SESSION["xp"] ?> * 100) / 500;
+        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 500;
 
-    document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
 
-    if (ratio > 100) {
-        ratio = 100;
-    }
+        if (ratio > 100) {
+            ratio = 100;
+        }
 
-    console.log(ratio);
+        console.log(ratio);
 
-    document.getElementById("level").style.width = ratio + '%'
+        document.getElementById("level").style.width = ratio + '%'
 
-    document.documentElement.style.cssText = '--xp :' + ratio + '%;';
+        document.documentElement.style.cssText = '--xp :' + ratio + '%;';
+
+        // Récupérer l'élément image et l'xp
+        const img = document.getElementById("imgrank");
+        const xp = <?= $_SESSION["xp"] ?>;
+
+        // Vérifier si l'xp est supérieure à 500
+        if (xp >= 500 && xp < 1500) {
+            // Modifier l'attribut src de l'image
+            img.setAttribute("src", "../../assets/rank-2.png");
+        } else if (xp >= 1500 && xp < 3000) {
+            img.setAttribute("src", "../../assets/rank-3.png");
+        } else if (xp >= 3000 && xp < 5000) {
+            img.setAttribute("src", "../../assets/rank-4.png");
+        } else if (xp >= 5000 && xp < 7500) {
+            img.setAttribute("src", "../../assets/rank-5.png");
+        } else if (xp >= 7500 && xp < 10000) {
+            img.setAttribute("src", "../../assets/rank-6.png");
+        }else if (xp >= 1000 && xp < 100000) {
+            img.setAttribute("src", "../../assets/rank-7.png");
+        }
     </script>
 </body>
 
