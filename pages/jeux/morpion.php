@@ -13,8 +13,6 @@
 
     <?php include "../../compenents/topBar.php" ?>
 
-    <h1>Morpion</h1>
-
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <h1>Morpion</h1>
@@ -25,24 +23,26 @@
         <input id="modal-btn" type="button" value="Commencer" class="btn">
     </div>
 
-    <h1>Morpion</h1>
-    <div id="grid">
-        <div id="c1" class="case"></div>
-        <div id="c2" class="case"></div>
-        <div id="c3" class="case"></div>
-        <div id="c4" class="case"></div>
-        <div id="c5" class="case"></div>
-        <div id="c6" class="case"></div>
-        <div id="c7" class="case"></div>
-        <div id="c8" class="case"></div>
-        <div id="c9" class="case"></div>
-    </div>
-    <div id="score">
-        <p>C'est au tour de Joueur <span id="joueur">1</span></p>
-        <p>Score Joueur 1 : <span id="score1">0</span></p>
-        <p>Score Ordinateur : <span id="score2">0</span></p>
-        <p>Matchs nuls : <span id="scoreNul">0</span></p>
-        <div class="message"></div>
+    <div class="container-morpion">
+        <h1 class="titlesGame">Morpion</h1>
+        <div id="grid">
+            <div id="c1" class="case"></div>
+            <div id="c2" class="case"></div>
+            <div id="c3" class="case"></div>
+            <div id="c4" class="case"></div>
+            <div id="c5" class="case"></div>
+            <div id="c6" class="case"></div>
+            <div id="c7" class="case"></div>
+            <div id="c8" class="case"></div>
+            <div id="c9" class="case"></div>
+        </div>
+        <div id="score">
+            <p>C'est au tour de Joueur <span id="joueur">1</span></p>
+            <p>Score Joueur 1 : <span id="score1">0</span></p>
+            <p>Score Ordinateur : <span id="score2">0</span></p>
+            <p>Matchs nuls : <span id="scoreNul">0</span></p>
+            <div class="message"></div>
+        </div>
     </div>
     <script src="../../JS/morpion.js"></script>
     <script src="../../JS/popup.js"></script>
