@@ -3,8 +3,8 @@
 
 <head>
     <title>Jeu de réflexe</title>
-    <link rel="stylesheet" type="text/css" href="reflexe.css">
     <link rel="stylesheet" href="../../index.css">
+
 </head>
 
 <body>

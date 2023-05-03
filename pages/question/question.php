@@ -3,7 +3,7 @@
 session_start();
 
 // empêcher l'utilisateur d'accédé à la page s'il n'est pas connecté en le renvoyant sur la page de connexion
-if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {   
+if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'] == "" || $_SESSION['filiere'] == "" || $_SESSION['pass_user'] == "" || $_SESSION['xp'] == "") {
     header('Location: ../login/logout.php');
     exit();
 }
@@ -54,8 +54,8 @@ foreach ($result as $row) {
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../css/question.css">
     <link rel="stylesheet" href="../../index.css">
+
     <title>Question
         <?= $_SESSION["quest_stage"] ?> - Arriveras-tu a repondre ?
     </title>
@@ -89,7 +89,6 @@ foreach ($result as $row) {
     <script src="../../JS/question.js"></script>
     <script>
         console.log("<?= $quest, $R1 ?>")
-
     </script>
 </body>
 
