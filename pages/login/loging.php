@@ -2,29 +2,30 @@
 session_start();
 
 if (isset($_GET["type"])) {
-    $type = $_GET["type"];
+    $type = htmlspecialchars($_GET["type"]);
 } else {
     header('Location: ../login/logout.php');
     exit();
 }
 
-
 // recupère les informations spécifiques à l'inscription
 if ($type == "Inscription") {
-    $user = $_GET["email"];
-    $filiere = $_GET["filiere"];
+    $user = htmlspecialchars($_GET["email"]);
+    $filiere = htmlspecialchars($_GET["filiere"]);
 }
 
-$pseudo = $_GET["pseudo"];
-$pass = $_GET["pass_user"];
+$pseudo = htmlspecialchars($_GET["pseudo"]);
+$pass = htmlspecialchars($_GET["pass_user"]);
 
 $show_users = "";
 $next = true;
 
 // accède à la base de données SQL
 $dbh = new PDO('mysql:host=localhost;dbname=wyzz;', "root", "");
-$requete = "SELECT * FROM user WHERE pseudo = '$pseudo'";
-$result = $dbh->query($requete);
+$requete = "SELECT * FROM user WHERE pseudo = :pseudo";
+$result = $dbh->prepare($requete);
+$result->bindParam('pseudo',$pseudo);
+$result->execute();
 
 // vérification en cas de connexion
 if ($type === "Connexion") {
