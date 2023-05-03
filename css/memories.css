@@ -6,6 +6,12 @@
 
 }
 
+.titlesGame {
+    color: #4E9BC6;
+    font-size: 3vw;
+    margin-bottom: 30px;
+}
+
 .row {
     display: flex;
 }

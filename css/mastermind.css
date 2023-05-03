@@ -1,3 +1,7 @@
+.titlesGame {
+    text-align: center;
+}
+
 .game {
     display: flex;
 }

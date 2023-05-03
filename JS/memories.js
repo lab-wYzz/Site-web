@@ -1,6 +1,7 @@
 const game = document.getElementById("game");
 const startButton = document.querySelector(".start");
 const colorBoxes = document.getElementsByClassName("color-box");
+const msg = document.querySelector(".message");
 const colors = ["red", "green", "blue", "yellow"];
 let sequence = [];
 let playerSequence = [];
@@ -66,10 +67,13 @@ for (let i = 0; i < colorBoxes.length; i++) {
     colorBoxes[i].addEventListener("click", () => {
         playerSequence.push(colors[i]);
         if (!checkSequence()) {
-            alert("Perdu !");
+            msg.innerHTML = "<h3>Perdu !</h3>"
             resetGame();
         } else if (playerSequence.length === sequence.length) {
-            alert("Bravo !");
+            msg.innerHTML = "<h3>Bravo !</h3>"
+            setTimeout(() => {
+                msg.innerHTML = "";
+            }, 2000);
             nextLevel();
         }
     });

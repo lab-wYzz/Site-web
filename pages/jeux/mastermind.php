@@ -11,7 +11,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="mastermind.css">
+        <link rel="stylesheet" href="../../css/mastermind.css">
         <link rel="stylesheet" href="../../index.css">
         <title>Mastermind</title>
     </head>
@@ -20,7 +20,6 @@
 
     <?php include "../../compenents/topBar.php" ?>
 
-    <h1>Mastermind</h1>
 
 
     <div class="overlay"></div>
@@ -31,6 +30,8 @@
             obtenir le meilleur score.</p>
         <input id="modal-btn" type="button" value="Commencer" class="btn">
     </div>
+
+    <h1 class="titlesGame">Mastermind</h1>
 
 
     <main class="main">
@@ -56,7 +57,7 @@
 
     </main>
 
-    <script src="mastermind.js"></script>
+    <script src="../../JS/mastermind.js"></script>
     <script src="../../JS/popup.js"></script>
 
 </body>

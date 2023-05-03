@@ -11,8 +11,6 @@
 
     <?php include "../../compenents/topBar.php" ?>
 
-    <h1>Memories</h1>
-
     <div class="overlay"></div>
     <div id="modal" class="modal">
         <h1>Memory</h1>
@@ -23,6 +21,8 @@
     </div>
 
     <div id="game">
+        <div class="message"></div>
+        <h1 class="titlesGame">Memory</h1>
         <div class="row">
             <div class="color-box" id="red"></div>
             <div class="color-box" id="green"></div>
