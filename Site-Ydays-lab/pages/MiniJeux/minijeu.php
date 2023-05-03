@@ -36,35 +36,23 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
             jeu.</p>
         <input id="modal-btn" type="button" value="Jouer" class="btn">
     </div>
-
     <div class="game">
-<<<<<<< HEAD
-        <div class="morpion">
-            <a id="morpion-link" href="../jeux/morpion.php">Morpion</a>
-        </div>
-        <div class="genius">
-            <a id="genius-link" href="../jeux/reflexe.php">Génius</a>
-        </div>
-        <div class="master">
-            <a id="master-link" href="../jeux/reflexe.php">Mastermind</a>
-        </div>
-=======
-        <a id="morpion-link" href="../jeux/morpion.php">
-            <div class="morpion">
-                Morpion
-            </div>
-        </a>
-        <a id="mastermind-link" href="../jeux/memories.php">
+        
+        <a id="master-link" href="../jeux/mastermind.php">
             <div class="master">
                 Mastermind
             </div>
         </a>
-        <a id="morpion-link" href="../jeux/mastermind.php">
-            <div class="morpion">
+        <a id="genius-link" href="../jeux/memories.php">
+            <div class="genius">
                 Génius
             </div>
         </a>
->>>>>>> ff1fa4d69be4ef75006ba97217147dcbbe814f15
+        <a id="morpion-link" href="../jeux/morpion.php">
+            <div class="mini_morpion">
+                Morpion
+            </div>
+        </a>
     </div>
 
 
