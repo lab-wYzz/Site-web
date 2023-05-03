@@ -33,9 +33,12 @@ session_start();
     <?php require '../../compenents/topBar.php' ?>
 
     <main class="mainProfil">
-        
-        <table class="stat">
-            <thread>
+
+        <table class="stats">
+            <thread class="thread">
+                <tr class="title">
+                    <th colspan="5">Statistiques personnelles</th>
+                </tr>
                 <tr class="données">
                     <th scope="stat">Pseudo</th>
                     <th scope="stat">email</th>
@@ -44,7 +47,7 @@ session_start();
                     <th scope="stat">Rang</th>
                 </tr>
             </thread>
-            <tbody>
+            <tbody class="tbody">
                 <tr>
                     <td scope="row" data-label="pseudo">
                         <?php echo $_SESSION['pseudo'] ?>
@@ -62,19 +65,20 @@ session_start();
                         <!-- <?php echo "$ranking" ?> -->
                     </td>
                 </tr>
-                
+
             </tbody>
         </table>
+
         <div class="rankProfil">
-            <img class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
+            <img id="imgrank" class="rankLogoProfil" src="../../assets/rank-1.png" alt="Rank">
             <span id="xp_value">test</span>
             <div class="progress-bar">
                 <div class="progress-fill" id="level"></div>
             </div>
         </div>
     </main>
-    
-    
+
+
     <?php require '../../compenents/footer.php' ?>
 
 
@@ -82,20 +86,58 @@ session_start();
     <script type="module">
         import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.esm.browser.min.js'
 
-        var ratio = (<?= $_SESSION["xp"] ?> * 100) / 25000;
+        var xp = <?= $_SESSION["xp"] ?>;
+        var ratio = 0;
 
-        document.getElementById("xp_value").innerHTML = '<?= $_SESSION["xp"] ?> XP (' + ratio + '%)';
+        if (xp >= 0 && xp < 500) {
+            ratio = (xp * 100) / 500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-1.png");
+        } else if (xp >= 500 && xp < 1500) {
+            ratio = ((xp - 500) * 100) / 1000;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-2.png");
+        } else if (xp >= 1500 && xp < 3000) {
+            ratio = ((xp - 1500) * 100) / 1500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-3.png");
+        } else if (xp >= 3000 && xp < 5000) {
+            ratio = ((xp - 3000) * 100) / 2000;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-4.png");
+        } else if (xp >= 5000 && xp < 7500) {
+            ratio = ((xp - 5000) * 100) / 2500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-5.png");
+        } else if (xp >= 7500 && xp < 10000) {
+            ratio = ((xp - 7500) * 100) / 2500;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-6.png");
+        } else {
+            ratio = 100;
+            document.getElementById("imgrank").setAttribute("src", "../../assets/rank-7.png");
+        }
 
         if (ratio > 100) {
             ratio = 100;
         }
 
-        console.log(ratio);
-
-        document.getElementById("level").style.width = ratio + '%'
-
+        document.getElementById("xp_value").innerHTML = xp + " XP (" + ratio.toFixed(2) + "%)";
+        document.getElementById("level").style.width = ratio + '%';
         document.documentElement.style.cssText = '--xp :' + ratio + '%;';
 
+        // Récupérer l'élément image
+        const img = document.getElementById("imgrank");
+
+        // Vérifier si l'xp est supérieure à 500
+        if (xp >= 500 && xp < 1500) {
+            // Modifier l'attribut src de l'image
+            img.setAttribute("src", "../../assets/rank-2.png");
+        } else if (xp >= 1500 && xp < 3000) {
+            img.setAttribute("src", "../../assets/rank-3.png");
+        } else if (xp >= 3000 && xp < 5000) {
+            img.setAttribute("src", "../../assets/rank-4.png");
+        } else if (xp >= 5000 && xp < 7500) {
+            img.setAttribute("src", "../../assets/rank-5.png");
+        } else if (xp >= 7500 && xp < 10000) {
+            img.setAttribute("src", "../../assets/rank-6.png");
+        } else if (xp >= 1000 && xp < 100000) {
+            img.setAttribute("src", "../../assets/rank-7.png");
+        }
     </script>
 </body>
 

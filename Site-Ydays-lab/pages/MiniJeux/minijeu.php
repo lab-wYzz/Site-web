@@ -37,20 +37,19 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
         <input id="modal-btn" type="button" value="Jouer" class="btn">
     </div>
     <div class="game">
-        
-        <a id="master-link" href="../jeux/mastermind.php">
-            <div class="master">
-                Mastermind
-            </div>
-        </a>
-        <a id="genius-link" href="../jeux/memories.php">
-            <div class="genius">
-                Génius
-            </div>
-        </a>
         <a id="morpion-link" href="../jeux/morpion.php">
-            <div class="mini_morpion">
+            <div class="morpion">
                 Morpion
+            </div>
+        </a>
+        <a id="master-link" href="../jeux/memories.php">
+            <div class="master">
+            Memories
+            </div>
+        </a>
+        <a id="morpion-link" href="../jeux/mastermind.php">
+            <div class="morpion">
+                Mastermind
             </div>
         </a>
     </div>
