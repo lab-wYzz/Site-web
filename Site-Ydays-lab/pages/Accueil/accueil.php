@@ -12,6 +12,14 @@ $user = "root";
 $pass = "";
 $bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
 
+$pseudo = $_SESSION['pseudo'];
+$requete = "SELECT * FROM user WHERE pseudo = '$pseudo'";
+$result = $bdd->query($requete);
+
+foreach ($result as $row) {
+    $_SESSION['xp'] = $row["xp"];
+}
+
 try {
 
     $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user LIMIT 5");
