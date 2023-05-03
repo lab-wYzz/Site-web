@@ -38,7 +38,7 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     </div>
     <div class="game">
         <a id="morpion-link" href="../jeux/morpion.php">
-            <div class="morpion">
+            <div class="mini_morpion">
                 Morpion
             </div>
         </a>
@@ -48,7 +48,7 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
             </div>
         </a>
         <a id="morpion-link" href="../jeux/mastermind.php">
-            <div class="morpion">
+            <div class="genius">
                 Mastermind
             </div>
         </a>
