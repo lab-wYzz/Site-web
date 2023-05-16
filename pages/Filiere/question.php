@@ -32,10 +32,11 @@ $quest_stage = $_SESSION["quest_stage"];
 
 // accède à la base de données SQL
 $dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
-$requete = "SELECT * FROM question WHERE filiere = '$filiere' ORDER BY rand() LIMIT 1";
+$requete = "SELECT * FROM question WHERE filiere != '$filiere' ORDER BY rand() LIMIT 1";
 $result = $dbh->query($requete);
 foreach ($result as $row) {
     $quest = $row["quest"];
+    $filiere = $row["filiere"];
     array_push($reponse, $row["R1"], $row["R2"], $row["R3"], $row["R4"]);
     $R1 = $reponse[0];
     $_SESSION["Good_rep"] = $R1;
@@ -66,6 +67,7 @@ foreach ($result as $row) {
 
     <main>
         <p><?= $_SESSION["quest_stage"] ?>/5</p>
+        <h2><?= $filiere ?></h2>
 
         <div class="question">
             <h3>

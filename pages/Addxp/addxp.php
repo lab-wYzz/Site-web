@@ -29,6 +29,5 @@ $_SESSION["xp_to_add"] = 0;
 
 header('Location: ./end_serie.php');
 
-header("Location: ../MiniJeux/minijeux.php")
 ?>
 

@@ -68,13 +68,21 @@ for (let i = 0; i < colorBoxes.length; i++) {
         playerSequence.push(colors[i]);
         if (!checkSequence()) {
             msg.innerHTML = "<h3>Perdu !</h3>"
-            resetGame();
+            setTimeout(function () {
+                window.location.href = ' ../Gain-Exp/addxp.php?end_game=lose';
+            }, 1000)
         } else if (playerSequence.length === sequence.length) {
             msg.innerHTML = "<h3>Bravo !</h3>"
             setTimeout(() => {
                 msg.innerHTML = "";
             }, 2000);
-            nextLevel();
+            if (level >= 5) {
+                setTimeout(function () {
+                    window.location.href = ' ../Gain-Exp/addxp.php?end_game=win';
+                }, 1000)
+            } else {
+                nextLevel();
+            }
         }
     });
 }

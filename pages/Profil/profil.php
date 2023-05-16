@@ -2,6 +2,42 @@
 
 session_start();
 
+$user = "root";
+$pass = "";
+$dbh = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
+
+$pseudo = $_SESSION['pseudo'];
+$requete = "SELECT * FROM user WHERE pseudo = :pseudo";
+$result = $dbh->prepare($requete);
+$result->bindParam('pseudo', $pseudo);
+$result->execute();
+
+foreach ($result as $row) {
+    $_SESSION['xp'] = $row["xp"];
+}
+
+$stmt = $dbh->prepare("SELECT id_user, xp FROM user");
+$stmt->execute();
+$result = $stmt->fetchAll();
+usort($result, function ($a, $b) {
+    $a = $a['xp'];
+    $b = $b['xp'];
+    return ($a == $b) ? 0 : (($a < $b) ? 1 : -1);
+});
+
+$item = NULL;
+$val = $_SESSION['id_user'];
+foreach ($result as $obj) {
+    if ($val == $obj[0]) {
+        $item = $obj;
+        break;
+    }
+}
+
+$ranking = 0;
+if (!is_null($item))
+    $ranking = array_search($item, $result) + 1;
+
 ?>
 
 <!DOCTYPE html>
@@ -14,9 +50,13 @@ session_start();
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Kanit:wght@200;400;700&family=Mina:wght@400;700&family=Zen+Dots&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
@@ -58,7 +98,7 @@ session_start();
                         <?php echo $_SESSION['xp'] ?>
                     </td>
                     <td data-label="rang">
-                        <!-- <?php echo "$ranking" ?> -->
+                        <?php echo "$ranking" ?>
                     </td>
                 </tr>
 
@@ -133,7 +173,7 @@ session_start();
             img.setAttribute("src", "../../assets/rank-6.png");
         } else if (xp >= 1000 && xp < 100000) {
             img.setAttribute("src", "../../assets/rank-7.png");
-        }
+    }
     </script>
 </body>
 

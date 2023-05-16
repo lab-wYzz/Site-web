@@ -68,14 +68,16 @@ function Main(color, element) {
                     essai.innerHTML += "<br>Essai " + (nbEssai + 1) + " \xa0 : \xa0 ";
                 } else {
                     essai.innerHTML += "<br>Vous avez perdu ! ";
-                    setTimeout(function (){
-                        alert("bye")
-                    },1000)
+                    setTimeout(function () {
+                        window.location.href = ' ../Gain-Exp/addxp.php?end_game=lose';
+                    }, 1000)
                 }
             } else {
                 if (BP >= 4) {
                     essai.innerHTML += "<br>Vous avez gagné ! ";
-                    
+                    setTimeout(function () {
+                        window.location.href = ' ../Gain-Exp/addxp.php?end_game=win';
+                    }, 1000)
                 }
             }
             codeplace = 0;

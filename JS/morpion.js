@@ -70,25 +70,33 @@ const jouerCase = (e) => {
   state[idCase] = state.joueurEnCours;
   let isVctoire = verifierVictoire();
   if (isVctoire === true) {
+    e.target.textContent = "X";
+    setTimeout(function () {
+      window.location.href = ' ../Gain-Exp/addxp.php?end_game=win';
+    }, 1000)
     // si victoire
-    if (state.joueurEnCours == 1) {
-      state.scoreJ1++;
-      score1.textContent = state.scoreJ1;
-    } else {
-      state.scoreJ2++;
-      score2.textContent = state.scoreJ2;
-    }
-    resetState();
-    cases.forEach((c) => (c.textContent = ""));
+    // if (state.joueurEnCours == 1) {
+    //   state.scoreJ1++;
+    //   score1.textContent = state.scoreJ1;
+    // } else {
+    //   state.scoreJ2++;
+    //   score2.textContent = state.scoreJ2;
+    // }
+    // resetState();
+    // cases.forEach((c) => (c.textContent = ""));
 
   } else if (isVctoire === null) {
+    e.target.textContent = "X";
+    setTimeout(function () {
+      window.location.href = ' ../Gain-Exp/addxp.php?end_game=lose';
+    }, 1000)
     // si nul
-    alert("match nul");
-    state.matchNul++;
-    scoreNul.textContent = state.matchNul;
-    joueur.textContent = "1";
-    resetState();
-    cases.forEach((c) => (c.textContent = ""));
+    // alert("match nul");
+    // state.matchNul++;
+    // scoreNul.textContent = state.matchNul;
+    // joueur.textContent = "1";
+    // resetState();
+    // cases.forEach((c) => (c.textContent = ""));
   } else if (isVctoire === false) {
     // sinon on continue le jeu
     if (state.joueurEnCours == 1) {
@@ -120,23 +128,26 @@ const jouerTourOrdinateur = () => {
   caseDOM.textContent = "O";
   let isVctoire = verifierVictoire();
   if (isVctoire === true) {
+    setTimeout(function () {
+      window.location.href = ' ../Gain-Exp/addxp.php?end_game=lose';
+    }, 1000)
     // si victoire de l'ordinateur
-    state.scoreJ2++;
-    score2.textContent = state.scoreJ2;
-    resetState();
-    caseDOM.textContent = "O";
-
-
-
-    cases.forEach((c) => (c.textContent = ""));
+    // state.scoreJ2++;
+    // score2.textContent = state.scoreJ2;
+    // resetState();
+    // caseDOM.textContent = "O";
+    // cases.forEach((c) => (c.textContent = ""));
   } else if (isVctoire === null) {
+    setTimeout(function () {
+      window.location.href = ' ../Gain-Exp/addxp.php?end_game=lose';
+    }, 1000)
     // si nul
-    state.matchNul++;
-    scoreNul.textContent = state.matchNul;
-    joueur.textContent = "1";
-    reset
-    resetState();
-    cases.forEach((c) => (c.textContent = ""));
+    // state.matchNul++;
+    // scoreNul.textContent = state.matchNul;
+    // joueur.textContent = "1";
+    // reset
+    // resetState();
+    // cases.forEach((c) => (c.textContent = ""));
   } else if (isVctoire === false) {
     // sinon on continue le jeu
     state.joueurEnCours = 1;

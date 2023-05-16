@@ -10,11 +10,12 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
 
 $user = "root";
 $pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
-
+$dbh = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
 $pseudo = $_SESSION['pseudo'];
-$requete = "SELECT * FROM user WHERE pseudo = '$pseudo'";
-$result = $bdd->query($requete);
+$requete = "SELECT * FROM user WHERE pseudo = :pseudo";
+$result = $dbh->prepare($requete);
+$result->bindParam('pseudo', $pseudo);
+$result->execute();
 
 foreach ($result as $row) {
     $_SESSION['xp'] = $row["xp"];
@@ -22,7 +23,7 @@ foreach ($result as $row) {
 
 try {
 
-    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user LIMIT 5");
+    $stmt = $dbh->prepare("SELECT pseudo, xp, filiere FROM user LIMIT 5");
 
     $stmt->execute();
     $result = $stmt->fetchAll();
@@ -71,9 +72,9 @@ try {
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
                 <!-- Slides -->
-                <div class="swiper-slide"><a href="../Filiere/filiere.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../Filiere/next_quest.php"><img class="categorie"
                             src="../../assets/Filiere.png" alt="Culture general"></a></div>
-                <div class="swiper-slide"><a href="../CultureG/cultureG.php"><img class="categorie"
+                <div class="swiper-slide"><a href="../CultureG/next_quest.php"><img class="categorie"
                             src="../../assets/CultureG.png" alt="Mini Jeux"></a></div>
                 <div class="swiper-slide"><a href="../MiniJeux/minijeu.php"><img class="categorie"
                             src="../../assets/MiniJeu.png" alt="Filiere"></a></div>

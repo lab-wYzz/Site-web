@@ -24,7 +24,7 @@ $next = true;
 $dbh = new PDO('mysql:host=localhost;dbname=wyzz;', "root", "");
 $requete = "SELECT * FROM user WHERE pseudo = :pseudo";
 $result = $dbh->prepare($requete);
-$result->bindParam('pseudo',$pseudo);
+$result->bindParam('pseudo', $pseudo);
 $result->execute();
 
 // vérification en cas de connexion
@@ -49,7 +49,6 @@ if ($type === "Connexion") {
         header('Location: ../Connexion/connexion.php');
     }
 }
-
 
 // vérification en cas d'inscription
 if ($type === "Inscription") {
@@ -76,8 +75,13 @@ if ($type === "Inscription") {
         // cré le compte de l'utilisateur dans la base de données SQL et le renvoie sur l'accueil
         if (str_contains($user, '@') & str_contains($user, '.')) {
             $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
-            $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES ('$user','$pseudo','$filiere','$hash_pass')";
-            $result = $dbh->exec($requete);
+            $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES (:user,:pseudo,:filiere,:hash_pass)";
+            $result = $dbh->prepare($requete);
+            $result->bindParam('user', $user);
+            $result->bindParam('pseudo', $pseudo);
+            $result->bindParam('filiere', $filiere);
+            $result->bindParam('hash_pass', $hash_pass);
+            $result->execute();
             header('Location: loging.php?pseudo=' . $pseudo . '&pass_user=' . $pass . '&type=Connexion');
         } else {
             $show_users = "format de mail non conforme";

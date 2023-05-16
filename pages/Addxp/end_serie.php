@@ -44,9 +44,13 @@ $xp = $_SESSION["xp_added"];
         </ol>
         <br>
         <p>Tu as gagné <?= $_SESSION["xp_added"] ?> xp</p>
-        <a href="../question/next_quest.php">
-            <button> new serie_xp</button>
+        <a href="../CultureG/next_quest.php">
+            <button> new CultureG serie</button>
         </a>
+        <a href="../Filiere/next_quest.php">
+            <button> new Filiere serie</button>
+        </a>
+        <a href="../Accueil/accueil.php">Home</a>
 
 
     </main>
