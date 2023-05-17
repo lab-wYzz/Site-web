@@ -83,7 +83,7 @@ foreach ($result as $row) {
 
         <div class="question">
             <h3>
-                <?= $quest, $R1 ?>
+                <?= $quest ?>
             </h3>
             <form action="next_quest.php" id="rep" class="reponse">
                 <input type="submit" id="REP1" class="btn" name="rep" value="<?= $reponse[0] ?>">
@@ -92,12 +92,7 @@ foreach ($result as $row) {
                 <input type="submit" id="REP4" class="btn" name="rep" value="<?= $reponse[3] ?>">
             </form>
         </div>
-        <p>
-            <?= $quest_stage ?>,
-            <?= $serie_xp ?>,
-            <?= $_SESSION["xp_to_add"] ?>
-        </p>
-
+        
     </main>
 
     <script src="../../JS/question.js"></script>
