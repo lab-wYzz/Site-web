@@ -78,10 +78,12 @@ foreach ($result as $row) {
     <?php require '../../compenents/topBar.php' ?>
 
     <main>
-        <p><?= $_SESSION["quest_stage"] ?>/5</p>
-        <h2><?= $filiere ?></h2>
+
 
         <div class="question">
+            <h2><?= $filiere ?></h2>
+            <p><?= $_SESSION["quest_stage"] ?>/5</p>
+
             <h3>
                 <?= $quest ?>
             </h3>
@@ -92,7 +94,7 @@ foreach ($result as $row) {
                 <input type="submit" id="REP4" class="btn" name="rep" value="<?= $reponse[3] ?>">
             </form>
         </div>
-        
+
     </main>
 
     <script src="../../JS/question.js"></script>
