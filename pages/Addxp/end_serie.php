@@ -33,32 +33,36 @@ $xp = $_SESSION["xp_added"];
 
     <main>
 
-        <p>Résultats réponses : </p>
-        <br>
-        <ol>
-            <li>Quest 1 : <?= $_SESSION["serie_stats"][0] ?></li>
-            <li>Quest 2 : <?= $_SESSION["serie_stats"][1] ?></li>
-            <li>Quest 3 : <?= $_SESSION["serie_stats"][2] ?></li>
-            <li>Quest 4 : <?= $_SESSION["serie_stats"][3] ?></li>
-            <li>Quest 5 : <?= $_SESSION["serie_stats"][4] ?></li>
-        </ol>
-        <br>
-        <p>Tu as gagné <?= $_SESSION["xp_added"] ?> xp</p>
-        <a href="../CultureG/next_quest.php">
-            <button> new CultureG serie</button>
-        </a>
-        <a href="../Filiere/next_quest.php">
-            <button> new Filiere serie</button>
-        </a>
-        <a href="../Accueil/accueil.php">Home</a>
+        <div class="question">
+
+            <h2>Résultats</h2>
+            <br>
+            <ul>
+                <li>Question 1 : <?= $_SESSION["serie_stats"][0] ?></li>
+                <li>Question 2 : <?= $_SESSION["serie_stats"][1] ?></li>
+                <li>Question 3 : <?= $_SESSION["serie_stats"][2] ?></li>
+                <li>Question 4 : <?= $_SESSION["serie_stats"][3] ?></li>
+                <li>Question 5 : <?= $_SESSION["serie_stats"][4] ?></li>
+            </ul>
+            <br>
+            <p>Tu as gagné <?= $_SESSION["xp_added"] ?> xp</p>
+            <a href="../CultureG/next_quest.php">
+                <input type="submit" class="btn" value="Culture-G">
+            </a>
+
+            <a href="../Filiere/next_quest.php">
+                <input type="submit" class="btn" value="Filiere">
+            </a>
+
+            <a href="../Accueil/accueil.php">
+                <input type="submit" class="btn" value="Home">
+            </a>
+        </div>
 
 
     </main>
 
     <script src="../../JS/question.js"></script>
-    <script>
-
-
     </script>
 </body>
 

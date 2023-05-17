@@ -64,13 +64,24 @@ foreach ($result as $row) {
 <body>
     <?php require '../../compenents/topBar.php' ?>
 
+    <div class="overlay"></div>
+    <div id="modal" class="modal">
+        <h1>Question CultureG</h1>
+        <p>Vous voici dans la catégorie Culture G. Vous trouverez ci-dessous les questions proposés chaque jour.
+            Cela marche de manière a pouvoir répondre à des questions de
+            culture général pour pouvoir gagner d’avantage d’xp.</p>
+        <input id="modal-btn" type="button" value="Jouer" class="btn">
+    </div>
+
     <main>
-        <p><?= $_SESSION["quest_stage"] ?>/5</p>
-        <h2><?= $filiere ?></h2>
+
 
         <div class="question">
+            <h2><?= $filiere ?></h2>
+            <p><?= $_SESSION["quest_stage"] ?>/5</p>
+
             <h3>
-                <?= $quest, $R1 ?>
+                <?= $quest ?>
             </h3>
             <form action="next_quest.php" id="rep" class="reponse">
                 <input type="submit" id="REP1" class="btn" name="rep" value="<?= $reponse[0] ?>">
@@ -79,13 +90,11 @@ foreach ($result as $row) {
                 <input type="submit" id="REP4" class="btn" name="rep" value="<?= $reponse[3] ?>">
             </form>
         </div>
-        <p>
-            <?= $quest_stage ?>,
-            <?= $serie_xp ?>,
-            <?= $_SESSION["xp_to_add"] ?>
-        </p>
+
 
     </main>
+
+    <script src="../../JS/popup.js"></script>
 
     <script src="../../JS/question.js"></script>
     <script>
