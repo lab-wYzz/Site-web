@@ -306,9 +306,6 @@ input:focus {
 }
 
 #test_message {
-  color: #000000;
-  font-weight: 800;
-  margin-top: -20px;
   margin-bottom: 20px;
 }
 
@@ -339,6 +336,10 @@ input:focus {
     position: relative;
   }
 }
+.footer {
+  margin-top: 300px;
+}
+
 .separation {
   position: absolute;
   width: 90%;

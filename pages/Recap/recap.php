@@ -18,25 +18,37 @@ if (isset($_GET["end_game"])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=], initial-scale=1.0">
-    <title>Document</title>
+    <title>Recap de votre partie</title>
     <link rel="stylesheet" href="../../index.css">
 </head>
 
 <body>
 
-    <?php
+    <div class="question">
+        <?php
     if ($end_game == "win") {
-        ?>
-        <h3>You win your Game Well played</h3>
+    ?>
+        <h2>Vous gagnez votre partie Bien joué</h2>
+        <h3>Vous avez gagne +10px</h3>
+
         <?php
     } else {
-        ?>
-        <h3>You lose your Game Good luck for the next one</h3>
+    ?>
+        <h2>Vous perdez votre partie Bonne chance pour la prochaine</h2>
+        <h3>Vous avez gagne +0px</h3>
         <?php
     }
     ?>
-    <a href="../Accueil/accueil.php">Home</a>
-    <a href="../MiniJeux/minijeu.php">MiniJeux</a>
+
+
+        <a href="../MiniJeux/minijeu.php">
+            <input type="submit" class="btn" value="MiniJeux">
+        </a>
+
+        <a href="../Accueil/accueil.php">
+            <input type="submit" class="btn" value="Home">
+        </a>
+    </div>
 
 </body>
 

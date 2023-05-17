@@ -15,12 +15,10 @@ function destroy()
     $_SESSION['filiere'] = "";
     $_SESSION['pass_user'] = "";
     $_SESSION['xp'] = "";
-    $_SESSION['message'] = "Deconnected";
+    $_SESSION['message'] = "Deconnecter avec succes";
 
     header('Location: ../Connexion/connexion.php');
 
 }
 
 destroy();
-
-?>
