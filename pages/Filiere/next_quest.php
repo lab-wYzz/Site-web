@@ -20,10 +20,10 @@ if (!isset($_SESSION["quest_stage"])) {
     }
 
     if ($_SESSION["Good_rep"] == $rep) {
-        array_push($_SESSION["serie_xp"], "good");
+        array_push($_SESSION["serie_xp"], "+10xp");
         $_SESSION["xp_to_add"] += 10;
     } else {
-        array_push($_SESSION["serie_xp"], "bad");
+        array_push($_SESSION["serie_xp"], "0xp");
     }
 
     header('Location: ../Addxp/addxp.php');
@@ -35,10 +35,10 @@ if (!isset($_SESSION["quest_stage"])) {
     }
 
     if ($_SESSION["Good_rep"] == $rep) {
-        array_push($_SESSION["serie_xp"], "good");
+        array_push($_SESSION["serie_xp"], "+10xp");
         $_SESSION["xp_to_add"] += 10;
     } else {
-        array_push($_SESSION["serie_xp"], "bad");
+        array_push($_SESSION["serie_xp"], "0xp");
     }
 
     $_SESSION["quest_stage"] += 1;
