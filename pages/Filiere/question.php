@@ -31,8 +31,20 @@ foreach ($_SESSION["serie_xp"] as $elm) {
 $quest_stage = $_SESSION["quest_stage"];
 
 // accède à la base de données SQL
-$dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
-$requete = "SELECT * FROM question WHERE filiere != '$filiere' ORDER BY rand() LIMIT 1";
+require("../../loadenv.php");
+$host = $_ENV["DB_HOST"];
+$port = $_ENV["DB_PORT"];
+$name = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USER"];
+$password = $_ENV["DB_PASSWORD"];
+
+$dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8";
+$dbh = new PDO($dsn, $user, $password, [
+    PDO::ATTR_EMULATE_PREPARES => false,
+    PDO::ATTR_STRINGIFY_FETCHES => false
+]);
+
+$requete = "SELECT * FROM wyzz_question WHERE filiere != '$filiere' ORDER BY rand() LIMIT 1";
 $result = $dbh->query($requete);
 foreach ($result as $row) {
     $quest = $row["quest"];

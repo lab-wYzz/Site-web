@@ -8,13 +8,22 @@ if ($_SESSION['id_user'] == "" || $_SESSION['email'] == "" || $_SESSION['pseudo'
     exit();
 }
 
-$user = "root";
-$pass = "";
-$bdd = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
+require("../../loadenv.php");
+$host = $_ENV["DB_HOST"];
+$port = $_ENV["DB_PORT"];
+$name = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USER"];
+$password = $_ENV["DB_PASSWORD"];
+
+$dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8";
+$dbh = new PDO($dsn, $user, $password, [
+    PDO::ATTR_EMULATE_PREPARES => false,
+    PDO::ATTR_STRINGIFY_FETCHES => false
+]);
 
 try {
 
-    $stmt = $bdd->prepare("SELECT pseudo, xp, filiere FROM user ");
+    $stmt = $dbh->prepare("SELECT pseudo, xp, filiere FROM wyzz_user ");
 
     $stmt->execute();
     $result = $stmt->fetchAll();

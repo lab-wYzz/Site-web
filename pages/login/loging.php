@@ -21,8 +21,20 @@ $show_users = "";
 $next = true;
 
 // accède à la base de données SQL
-$dbh = new PDO('mysql:host=localhost;dbname=wyzz;', "root", "");
-$requete = "SELECT * FROM user WHERE pseudo = :pseudo";
+require("../../loadenv.php");
+$host = $_ENV["DB_HOST"];
+$port = $_ENV["DB_PORT"];
+$name = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USER"];
+$password = $_ENV["DB_PASSWORD"];
+
+$dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8";
+$dbh = new PDO($dsn, $user, $password, [
+    PDO::ATTR_EMULATE_PREPARES => false,
+    PDO::ATTR_STRINGIFY_FETCHES => false
+]);
+
+$requete = "SELECT * FROM wyzz_user WHERE pseudo = :pseudo";
 $result = $dbh->prepare($requete);
 $result->bindParam('pseudo', $pseudo);
 $result->execute();
@@ -75,7 +87,7 @@ if ($type === "Inscription") {
         // cré le compte de l'utilisateur dans la base de données SQL et le renvoie sur l'accueil
         if (str_contains($user, '@') & str_contains($user, '.')) {
             $hash_pass = password_hash($pass, PASSWORD_DEFAULT);
-            $requete = "INSERT INTO user (email, pseudo, filiere, pass_user) VALUES (:user,:pseudo,:filiere,:hash_pass)";
+            $requete = "INSERT INTO wyzz_user (email, pseudo, filiere, pass_user) VALUES (:user,:pseudo,:filiere,:hash_pass)";
             $result = $dbh->prepare($requete);
             $result->bindParam('user', $user);
             $result->bindParam('pseudo', $pseudo);

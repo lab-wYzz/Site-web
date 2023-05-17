@@ -2,12 +2,21 @@
 
 session_start();
 
-$user = "root";
-$pass = "";
-$dbh = new PDO('mysql:host=localhost;dbname=wyzz', $user, $pass);
+require("../../loadenv.php");
+$host = $_ENV["DB_HOST"];
+$port = $_ENV["DB_PORT"];
+$name = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USER"];
+$password = $_ENV["DB_PASSWORD"];
+
+$dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8";
+$dbh = new PDO($dsn, $user, $password, [
+    PDO::ATTR_EMULATE_PREPARES => false,
+    PDO::ATTR_STRINGIFY_FETCHES => false
+]);
 
 $pseudo = $_SESSION['pseudo'];
-$requete = "SELECT * FROM user WHERE pseudo = :pseudo";
+$requete = "SELECT * FROM wyzz_user WHERE pseudo = :pseudo";
 $result = $dbh->prepare($requete);
 $result->bindParam('pseudo', $pseudo);
 $result->execute();
@@ -16,7 +25,7 @@ foreach ($result as $row) {
     $_SESSION['xp'] = $row["xp"];
 }
 
-$stmt = $dbh->prepare("SELECT id_user, xp FROM user");
+$stmt = $dbh->prepare("SELECT id_user, xp FROM wyzz_user");
 $stmt->execute();
 $result = $stmt->fetchAll();
 usort($result, function ($a, $b) {

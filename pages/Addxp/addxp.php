@@ -12,8 +12,20 @@ $id_user = $_SESSION["id_user"];
 $xp = $_SESSION["xp_to_add"];
 $_SESSION["xp_added"] = $xp;
 
-$dbh = new PDO('mysql:host=localhost;dbname=wyzz', "root", "");
-$requete = "UPDATE user SET xp = xp + '$xp' WHERE id_user = '$id_user'";
+require("../../loadenv.php");
+$host = $_ENV["DB_HOST"];
+$port = $_ENV["DB_PORT"];
+$name = $_ENV["DB_DATABASE"];
+$user = $_ENV["DB_USER"];
+$password = $_ENV["DB_PASSWORD"];
+
+$dsn = "mysql:host={$host};port={$port};dbname={$name};charset=utf8";
+$dbh = new PDO($dsn, $user, $password, [
+    PDO::ATTR_EMULATE_PREPARES => false,
+    PDO::ATTR_STRINGIFY_FETCHES => false
+]);
+
+$requete = "UPDATE wyzz_user SET xp = xp + '$xp' WHERE id_user = '$id_user'";
 $result = $dbh->exec($requete);
 
 $_SESSION["serie_stats"] = array();
